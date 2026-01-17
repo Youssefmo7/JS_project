@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="./styles/payment.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Payment Page</h1>
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Course Summary</h2>
+            <div class="course-container">
+                <div class="course-image">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z"/>
+                    </svg>
+                    <span>Course Image</span>
+                </div>
+                <div class="course-details">
+                    <div class="course-title" id="courseTitle">Data Science Bootcamp</div>
+                    <div class="course-description" id="courseDescription">Learn the fundamentals of data</div>
+                    <div class="course-price" id="coursePrice">$149.99</div>
+                    <div class="course-info">
+                        <div><strong>Instructor:</strong> <span id="instructor">Jane Doe</span></div>
+                        <div><strong>Duration:</strong> <span id="duration">10 Weeks</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Payment Method</h2>
+            <button class="paypal-button" onclick="processPayment()">
+                <span class="paypal-logo">PayPal</span>
+                <span>checkout</span>
+            </button>
+            <div class="alternative-payment" onclick="toggleAlternatives()">
+                Alternative Payment Options
+            </div>
+            <div class="payment-options" id="paymentOptions">
+                <div class="payment-option" onclick="selectPayment('Credit Card')">
+                    💳 Credit Card
+                </div>
+                <div class="payment-option" onclick="selectPayment('Debit Card')">
+                    💳 Debit Card
+                </div>
+                <div class="payment-option" onclick="selectPayment('Bank Transfer')">
+                    🏦 Bank Transfer
+                </div>
+                <div class="payment-option" onclick="selectPayment('Apple Pay')">
+                    🍎 Apple Pay
+                </div>
+            </div>
+            <div class="secure-transaction">Secure Transaction</div>
+        </div>
+    </div>
+    
+    <script src="./js/payment.js"></script>
+</body>
+</html>

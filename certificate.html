@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Page</title>
+   <link rel="stylesheet" href="./styles/certificate.css">
+</head>
+<body>
+    <h1 class="page-title">Certificate Page</h1>
+    
+    <div class="certificate-container">
+        <div class="certificate-card">
+            <div class="certificate-header">
+                Certificate of Completion
+            </div>
+            <div class="certificate-content">
+                <div class="label">Student Name</div>
+                <div class="student-name" id="studentName">Alex Johnson</div>
+                
+                <div class="label">Course Name</div>
+                <div class="course-name" id="courseName">Introduction to Data Science</div>
+                
+                <div class="label">Completion Date</div>
+                <div class="completion-date" id="completionDate">October 26, 2023</div>
+                
+                <button class="download-button" onclick="downloadPDF()">
+                    <span>Download PDF</span>
+                    <span class="download-icon">⬇</span>
+                </button>
+            </div>
+        </div>
+    </div>
+  
+    <script src="./js/certificate.js"></script>
+</body>
+</html>

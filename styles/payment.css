@@ -1,0 +1,213 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            background: white;
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 12px;
+            font-size: 32px;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+
+        .course-container {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        .course-image {
+            background: linear-gradient(135deg, #d4dce5 0%, #c8d3df 100%);
+            width: 180px;
+            height: 180px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .course-image svg {
+            width: 80px;
+            height: 80px;
+            fill: #64748b;
+            margin-bottom: 10px;
+        }
+
+        .course-image span {
+            color: #475569;
+            font-size: 14px;
+        }
+
+        .course-details {
+            flex: 1;
+        }
+
+        .course-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .course-description {
+            color: #64748b;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .course-price {
+            font-size: 36px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .course-info {
+            color: #1a1a1a;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .course-info strong {
+            font-weight: 600;
+        }
+
+        .paypal-button {
+            background: #0070ba;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .paypal-button:hover {
+            background: #005a94;
+        }
+
+        .paypal-logo {
+            font-weight: 700;
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        .alternative-payment {
+            text-align: center;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .alternative-payment:hover {
+            color: #667eea;
+        }
+
+        .secure-transaction {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .secure-transaction::before {
+            content: "🔒";
+        }
+
+        .payment-options {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .payment-options.active {
+            display: block;
+        }
+
+        .payment-option {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-option:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .course-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .card {
+                padding: 25px;
+            }
+        }

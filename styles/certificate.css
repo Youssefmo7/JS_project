@@ -1,0 +1,165 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #a8d5e2 0%, #6ba3d4 50%, #7b9fd9 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .certificate-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 60px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .certificate-card {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .certificate-header {
+            text-align: center;
+            color: white;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        .certificate-content {
+            background: white;
+            border-radius: 16px;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .label {
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .student-name {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 35px;
+            line-height: 1.2;
+        }
+
+        .course-name {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 35px;
+            line-height: 1.3;
+        }
+
+        .completion-date {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 45px;
+        }
+
+        .download-button {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 18px 50px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+
+        .download-button:active {
+            transform: translateY(0);
+        }
+
+        .download-icon {
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 36px;
+                margin-bottom: 40px;
+            }
+
+            .certificate-container {
+                padding: 30px;
+            }
+
+            .certificate-card {
+                padding: 30px;
+            }
+
+            .certificate-header {
+                font-size: 28px;
+            }
+
+            .certificate-content {
+                padding: 35px 25px;
+            }
+
+            .student-name {
+                font-size: 36px;
+            }
+
+            .course-name {
+                font-size: 22px;
+            }
+
+            .completion-date {
+                font-size: 18px;
+            }
+
+            .download-button {
+                padding: 16px 40px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .student-name {
+                font-size: 28px;
+            }
+
+            .course-name {
+                font-size: 18px;
+            }
+        }

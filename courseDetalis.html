@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details Page</title>
+    <link rel="stylesheet" href="./styles/courseDetails.css">
+    
+</head>
+<body>
+    <div class="page-header">
+        <h1 class="page-title">Course Details Page</h1>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h2 class="course-title" id="courseTitle">Machine Learning Fundamentals</h2>
+                    <span class="category-badge" id="category">Computer Science</span>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" alt="Course Image" id="heroImage">
+                </div>
+            </div>
+            
+            <div class="description-section">
+                <h3 class="section-title">Description</h3>
+                <p class="description-text" id="description1">
+                    Machine Learning dolor Sit amet, Consectetue sunur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrod exercitation en ullanco laboris nisi ut aliquip ox: ex ea commodo consequat. Lubors nisi ut aliquip ea learning exenmiss not tn:asscunt reproharn. In voluptate allum dolor in repoonontmodo consequat. Duis aute irure dolor in repohenderit in auiatat voluptate viatos ut aliquip ex ea commodo consequat.
+                </p>
+                <p class="description-text" id="description2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrod exercitation en exercitation ullanco laboris nisi ut aliquip ex ea commodo consequat. Duiscamte a eu ixerumir consequat. Duis aute irene intern quis volit esse cilllit dorr in exae eum ali. reprehenderit in voluptate dolore magna aliqua mollit anim id.
+                </p>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="info-card">
+                <h3 class="card-title">Instructor</h3>
+                <div class="instructor-info">
+                    <div class="instructor-avatar">👩‍🏫</div>
+                    <div class="instructor-name" id="instructorName">Dr. Anya Sharma</div>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-row">
+                    <span class="info-label">Price:</span>
+                    <span class="info-value" id="price">$199</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Duration:</span>
+                    <span class="info-value" id="duration">12 Weeks</span>
+                </div>
+                <button class="enroll-button" onclick="enrollNow()">Enroll Now</button>
+            </div>
+            
+            <div class="info-card">
+                <h3 class="card-title">Course Content</h3>
+                <div class="content-section">
+                    <div class="content-item" onclick="toggleContent(this)">
+                        <div class="content-header">
+                            <div class="content-header-left">
+                                <span class="content-icon">🎓</span>
+                                <span class="content-title">Course Learning</span>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="content-body">
+                            <div class="content-list">
+                                <div class="content-list-item">Introduction to Machine Learning</div>
+                                <div class="content-list-item">Understanding Algorithms</div>
+                                <div class="content-list-item">Data Preprocessing</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-item" onclick="toggleContent(this)">
+                        <div class="content-header">
+                            <div class="content-header-left">
+                                <span class="content-icon">💻</span>
+                                <span class="content-title">Compute Learning</span>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="content-body">
+                            <div class="content-list">
+                                <div class="content-list-item">Python Basics</div>
+                                <div class="content-list-item">NumPy and Pandas</div>
+                                <div class="content-list-item">Scikit-learn Framework</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-item" onclick="toggleContent(this)">
+                        <div class="content-header">
+                            <div class="content-header-left">
+                                <span class="content-icon">📄</span>
+                                <span class="content-title">Summary Learning</span>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="content-body">
+                            <div class="content-list">
+                                <div class="content-list-item">Key Concepts Review</div>
+                                <div class="content-list-item">Best Practices</div>
+                                <div class="content-list-item">Final Project Overview</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-item" onclick="toggleContent(this)">
+                        <div class="content-header">
+                            <div class="content-header-left">
+                                <span class="content-icon">🤖</span>
+                                <span class="content-title">Models Learning</span>
+                            </div>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                        <div class="content-body">
+                            <div class="content-list">
+                                <div class="content-list-item">Linear Regression</div>
+                                <div class="content-list-item">Decision Trees</div>
+                                <div class="content-list-item">Neural Networks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/courseDetalis.js"></script>
+</body>
+</html>
