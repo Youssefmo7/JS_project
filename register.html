@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="css/register.css" />
+  </head>
+  <body>
+    <div class="register">
+      <form>
+        <h1>Create New Account</h1>
+        <div class="inputs">
+          <div class="St_name">
+            <label for="name">Student Name</label>
+            <br />
+            <input type="text" id="name" placeholder="First" required />
+
+            <input type="text" placeholder="Last" required />
+          </div>
+        </div>
+        <div class="inputs">
+          <label for="email">Email</label>
+          <br />
+          <input type="email" id="email" placeholder="mostafa@gmai.com" />
+        </div>
+        <div class="inputs">
+          <div class="gender">
+            <label for="gender">Gender</label>
+            <br />
+            <input type="radio" id="female" name="gender" required />
+            <label for="female">Female</label>
+            <input type="radio" id="male" name="gender" required />
+            <label for="male">Male</label>
+          </div>
+        </div>
+        <div class="inputs">
+          <div class="password">
+            <label for="password">Password</label>
+            <br />
+            <input type="password" id="password" required />
+            <br />
+            <label for="re-password">Repeat Password</label>
+            <br />
+            <input type="password" required />
+          </div>
+        </div>
+        <div class="inputs">
+          <label for="role">Role</label>
+          <br />
+          <select id="role" name="role">
+            <option value="admin">Admin</option>
+            <option value="student" selected>Student</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+body {
+  /* background: url(/backgrounds.jpg) no-repeat;
+  background-size: cover;
+  background-position: center; */
+  background-color: #d1e3ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.login {
+  margin: auto;
+  margin-top: 100px; 
+  background-color: white;
+  width: 420px;
+  border-radius: 30px; 
+  padding: 40px;
+  border: none; 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
+}
+h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #1a2b4b; 
+  margin-bottom: 20px;
+}
+
+.login .inputs {
+  width: 100%;
+  height: 55px; 
+  margin: 15px 0;
+}
+
+.inputs input {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #ddd; 
+  outline: none;
+  border-radius: 40px;
+  color: #333; 
+  font-size: 16px;
+  padding-left: 20px;
+}
+.inputs input::placeholder {
+  color: #aaa;
+}
+
+.remember-forget a {
+  margin-left: 120px;
+  text-decoration: none;
+  color: #1a2b4b; 
+}
+
+.remember-forget a:hover {
+  text-decoration: underline;
+}
+.remember-forget input {
+  color: white;
+  margin-right: 3px;
+  accent-color: #fff;
+}
+.remember-forget label {
+ color: #1a2b4b; 
+}
+
+.login .btn {
+ margin-top: 20px;
+  width: 100%;
+  height: 50px;
+  background-color: #4a86e8; 
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-size: 16px;
+  color: white; 
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login .btn:hover {
+  background-color: #3574d3; 
+}
+
+.register-link {
+  text-align: center;
+  color: #666; 
+  margin-top: 20px;
+}
+.register-link a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #4a86e8; 
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
