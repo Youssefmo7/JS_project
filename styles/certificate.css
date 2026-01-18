@@ -14,7 +14,7 @@
             padding: 40px 20px;
         }
 
-        .page-title {
+        .cert-page-title {
             font-size: 48px;
             font-weight: 700;
             color: #1e293b;
@@ -22,7 +22,7 @@
             text-align: center;
         }
 
-        .certificate-container {
+        .cert-container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 24px;
             padding: 60px;
@@ -31,14 +31,14 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
-        .certificate-card {
+        .cert-card {
             background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             border-radius: 20px;
             padding: 50px;
             box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
         }
 
-        .certificate-header {
+        .cert-header {
             text-align: center;
             color: white;
             font-size: 36px;
@@ -47,21 +47,21 @@
             letter-spacing: 0.5px;
         }
 
-        .certificate-content {
+        .cert-content {
             background: white;
             border-radius: 16px;
             padding: 50px 40px;
             text-align: center;
         }
 
-        .label {
+        .cert-label {
             font-size: 16px;
             color: #64748b;
             margin-bottom: 8px;
             font-weight: 500;
         }
 
-        .student-name {
+        .cert-student-name {
             font-size: 48px;
             font-weight: 700;
             color: #1e293b;
@@ -69,7 +69,7 @@
             line-height: 1.2;
         }
 
-        .course-name {
+        .cert-course-name {
             font-size: 28px;
             font-weight: 600;
             color: #1e293b;
@@ -77,14 +77,14 @@
             line-height: 1.3;
         }
 
-        .completion-date {
+        .cert-completion-date {
             font-size: 22px;
             font-weight: 600;
             color: #1e293b;
             margin-bottom: 45px;
         }
 
-        .download-button {
+        .cert-download-button {
             background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             color: white;
             border: none;
@@ -100,66 +100,66 @@
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
 
-        .download-button:hover {
+        .cert-download-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
             background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
         }
 
-        .download-button:active {
+        .cert-download-button:active {
             transform: translateY(0);
         }
 
-        .download-icon {
+        .cert-download-icon {
             font-size: 24px;
         }
 
         @media (max-width: 768px) {
-            .page-title {
+            .cert-page-title {
                 font-size: 36px;
                 margin-bottom: 40px;
             }
 
-            .certificate-container {
+            .cert-container {
                 padding: 30px;
             }
 
-            .certificate-card {
+            .cert-card {
                 padding: 30px;
             }
 
-            .certificate-header {
+            .cert-header {
                 font-size: 28px;
             }
 
-            .certificate-content {
+            .cert-content {
                 padding: 35px 25px;
             }
 
-            .student-name {
+            .cert-student-name {
                 font-size: 36px;
             }
 
-            .course-name {
+            .cert-course-name {
                 font-size: 22px;
             }
 
-            .completion-date {
+            .cert-completion-date {
                 font-size: 18px;
             }
 
-            .download-button {
+            .cert-download-button {
                 padding: 16px 40px;
                 font-size: 18px;
             }
         }
 
         @media (max-width: 480px) {
-            .student-name {
+            .cert-student-name {
                 font-size: 28px;
             }
 
-            .course-name {
+            .cert-course-name {
                 font-size: 18px;
             }
         }

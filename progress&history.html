@@ -4,75 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progress & History Page</title>
+    <link rel="stylesheet" href="./styles/common.css">
     <link rel="stylesheet" href="./styles/progress&history.css">
 </head>
 <body>
-    <div class="page-header">
+    <div class="ph-page-header">
         <h1>Progress & History Page</h1>
     </div>
     
-    <div class="main-container">
-        <div class="sidebar">
-            <div class="nav-item" id="dashboard_icon">
-                <span class="nav-icon">📊</span>
+    <div class="ph-main-container">
+        <div class="ph-sidebar">
+            <div class="ph-nav-item" id="dashboard_icon">
+                <span class="ph-nav-icon">📊</span>
                 <span>Dashboard</span>
             </div>
-            <!-- <div class="nav-item">
-                <span class="nav-icon">📚</span>
+            <!-- <div class="ph-nav-item">
+                <span class="ph-nav-icon">📚</span>
                 <span>Courses</span>
             </div> -->
-            <div class="nav-item active">
-                <span class="nav-icon">📈</span>
+            <div class="ph-nav-item active">
+                <span class="ph-nav-icon">📈</span>
                 <span>Progress</span>
             </div>
-            <div class="nav-item">
-                <span class="nav-icon">👥</span>
+            <div class="ph-nav-item">
+                <span class="ph-nav-icon">👥</span>
                 <span>Community</span>
             </div>
-            <div class="nav-item">
-                <span class="nav-icon">⚙️</span>
+            <div class="ph-nav-item">
+                <span class="ph-nav-icon">⚙️</span>
                 <span>Settings</span>
             </div>
-            <div class="nav-item">
-                <span class="nav-icon">❓</span>
+            <div class="ph-nav-item">
+                <span class="ph-nav-icon">❓</span>
                 <span>Help</span>
             </div>
         </div>
         
-        <div class="content-area">
-            <div class="top-bar">
-                <h2 class="content-title">Progress</h2>
-                <div class="top-actions">
-                    <div class="profile-pic">👤</div>
-                    <div class="notification-icon">
+        <div class="ph-content-area">
+            <div class="ph-top-bar">
+                <h2 class="ph-content-title">Progress</h2>
+                <div class="ph-top-actions">
+                    <div class="ph-profile-pic">👤</div>
+                    <div class="ph-notification-icon">
                         🔔
-                        <span class="notification-badge"></span>
+                        <span class="ph-notification-badge"></span>
                     </div>
-                    <div class="search-bar">
+                    <div class="ph-search-bar">
                         <input type="text" placeholder="Search" id="searchInput">
-                        <span class="search-icon">🔍</span>
+                        <span class="ph-search-icon">🔍</span>
                     </div>
                 </div>
             </div>
             
-            <div class="content-grid">
-                <div class="section-card">
-                    <h3 class="section-title">Ongoing Courses</h3>
+            <div class="ph-content-grid">
+                <div class="ph-section-card">
+                    <h3 class="ph-section-title">Ongoing Courses</h3>
                     <div id="ongoingCourses"></div>
                 </div>
                 
-                <div class="section-card">
-                    <h3 class="section-title">My Certificates</h3>
-                    <div class="certificates-grid" id="certificatesGrid"></div>
+                <div class="ph-section-card">
+                    <h3 class="ph-section-title">My Certificates</h3>
+                    <div class="ph-certificates-grid" id="certificatesGrid"></div>
                 </div>
             </div>
             
-            <div class="section-card">
-                <h3 class="section-title">Completed Courses</h3>
+            <div class="ph-section-card">
+                <h3 class="ph-section-title">Completed Courses</h3>
                 <div id="completedCourses"></div>
             </div>
             
-            <div class="footer">
+            <div class="ph-footer">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
                 <a href="#">Contact Us</a>

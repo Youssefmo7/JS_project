@@ -58,20 +58,20 @@
         function renderOngoingCourses() {
             const container = document.getElementById('ongoingCourses');
             container.innerHTML = ongoingCourses.map(course => `
-                <div class="course-item">
-                    <div class="course-icon">${course.icon}</div>
-                    <div class="course-details">
-                        <div class="course-meta">
-                            <div class="course-title">${course.title}</div>
-                            <div class="progress-info">${course.progress}% Complete</div>
+                <div class="ph-course-item">
+                    <div class="ph-course-icon">${course.icon}</div>
+                    <div class="ph-course-details">
+                        <div class="ph-course-meta">
+                            <div class="ph-course-title">${course.title}</div>
+                            <div class="ph-progress-info">${course.progress}% Complete</div>
                         </div>
-                        <div class="instructor">Instructor: ${course.instructor}</div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: ${course.progress}%"></div>
+                        <div class="ph-instructor">Instructor: ${course.instructor}</div>
+                        <div class="ph-progress-bar">
+                            <div class="ph-progress-fill" style="width: ${course.progress}%"></div>
                         </div>
-                        <div class="due-date">Due: ${course.dueDate}</div>
+                        <div class="ph-due-date">Due: ${course.dueDate}</div>
                     </div>
-                    <button class="resume-button" onclick="resumeCourse('${course.title}')">Resume</button>
+                    <button class="ph-resume-button" onclick="resumeCourse('${course.title}')">Resume</button>
                 </div>
             `).join('');
         }
@@ -80,13 +80,13 @@
         function renderCompletedCourses() {
             const container = document.getElementById('completedCourses');
             container.innerHTML = completedCourses.map(course => `
-                <div class="completed-item">
-                    <div class="check-icon">✓</div>
-                    <div class="completed-details">
-                        <div class="completed-title">${course.title}</div>
-                        <div class="completed-desc">${course.description}</div>
+                <div class="ph-completed-item">
+                    <div class="ph-check-icon">✓</div>
+                    <div class="ph-completed-details">
+                        <div class="ph-completed-title">${course.title}</div>
+                        <div class="ph-completed-desc">${course.description}</div>
                     </div>
-                    <div class="completion-date">${course.date}</div>
+                    <div class="ph-completion-date">${course.date}</div>
                 </div>
             `).join('');
         }
@@ -95,12 +95,12 @@
         function renderCertificates() {
             const container = document.getElementById('certificatesGrid');
             container.innerHTML = certificates.map((cert, index) => `
-                <div class="certificate-card">
-                    <div class="certificate-preview">
+                <div class="ph-certificate-card">
+                    <div class="ph-certificate-preview">
                         <div>Certificate</div>
                     </div>
-                    <div class="certificate-name">${cert.name}</div>
-                    <button class="download-pdf-btn" onclick="downloadCertificate('${cert.name}')">
+                    <div class="ph-certificate-name">${cert.name}</div>
+                    <button class="ph-download-pdf-btn" onclick="downloadCertificate('${cert.name}')">
                         <span>⬇️</span>
                         <span>Download PDF</span>
                     </button>

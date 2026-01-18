@@ -11,12 +11,12 @@
             padding: 30px 20px;
         }
 
-        .page-header {
+        .course-page-header {
             text-align: center;
             margin-bottom: 40px;
         }
 
-        .page-title {
+        .course-page-title {
             display: inline-block;
             background: white;
             padding: 18px 50px;
@@ -27,7 +27,7 @@
             border: 2px solid #cbd5e1;
         }
 
-        .container {
+        .course-container {
             max-width: 1300px;
             margin: 0 auto;
             display: grid;
@@ -35,13 +35,13 @@
             gap: 30px;
         }
 
-        .main-content {
+        .course-main-content {
             display: flex;
             flex-direction: column;
             gap: 30px;
         }
 
-        .hero-section {
+        .course-hero-section {
             background: linear-gradient(135deg, #4f76f6 0%, #3b66f0 100%);
             border-radius: 24px;
             padding: 50px;
@@ -52,7 +52,7 @@
             box-shadow: 0 10px 40px rgba(79, 118, 246, 0.3);
         }
 
-        .hero-text {
+        .course-hero-text {
             flex: 1;
         }
 
@@ -64,7 +64,7 @@
             line-height: 1.2;
         }
 
-        .category-badge {
+        .course-category-badge {
             display: inline-block;
             background: white;
             color: #1e293b;
@@ -74,7 +74,7 @@
             font-weight: 600;
         }
 
-        .hero-image {
+        .course-hero-image {
             width: 350px;
             height: 220px;
             border-radius: 16px;
@@ -83,40 +83,40 @@
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
 
-        .hero-image img {
+        .course-hero-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .description-section {
+        .course-description-section {
             background: white;
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
-        .section-title {
+        .course-section-title {
             font-size: 26px;
             font-weight: 700;
             color: #1e293b;
             margin-bottom: 20px;
         }
 
-        .description-text {
+        .course-description-text {
             color: #475569;
             line-height: 1.8;
             font-size: 15px;
             margin-bottom: 20px;
         }
 
-        .sidebar {
+        .course-sidebar {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
-        .info-card {
+        .course-info-card {
             background: white;
             border-radius: 20px;
             padding: 30px;
@@ -191,16 +191,16 @@
             box-shadow: 0 4px 12px rgba(79, 118, 246, 0.3);
         }
 
-        .enroll-button:hover {
+        .course-enroll-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(79, 118, 246, 0.4);
         }
 
-        .content-section {
+        .course-content-section {
             margin-top: 20px;
         }
 
-        .content-item {
+        .course-content-item {
             background: white;
             border: 2px solid #e2e8f0;
             border-radius: 12px;
@@ -209,11 +209,11 @@
             transition: all 0.3s ease;
         }
 
-        .content-item:hover {
+        .course-content-item:hover {
             border-color: #4f76f6;
         }
 
-        .content-header {
+        .course-content-header {
             padding: 18px 20px;
             display: flex;
             align-items: center;
@@ -223,73 +223,73 @@
             transition: background 0.3s ease;
         }
 
-        .content-header:hover {
+        .course-content-header:hover {
             background: #f8fafc;
         }
 
-        .content-header-left {
+        .course-content-header-left {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .content-icon {
+        .course-content-icon {
             font-size: 20px;
         }
 
-        .content-title {
+        .course-content-title {
             font-size: 16px;
             font-weight: 600;
             color: #1e293b;
         }
 
-        .expand-icon {
+        .course-expand-icon {
             font-size: 18px;
             color: #64748b;
             transition: transform 0.3s ease;
         }
 
-        .content-item.active .expand-icon {
+        .course-content-item.active .course-expand-icon {
             transform: rotate(180deg);
         }
 
-        .content-body {
+        .course-content-body {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
             background: #f8fafc;
         }
 
-        .content-item.active .content-body {
+        .course-content-item.active .course-content-body {
             max-height: 500px;
         }
 
-        .content-list {
+        .course-content-list {
             padding: 20px;
         }
 
-        .content-list-item {
+        .course-content-list-item {
             padding: 12px 0;
             color: #475569;
             font-size: 14px;
             border-bottom: 1px solid #e2e8f0;
         }
 
-        .content-list-item:last-child {
+        .course-content-list-item:last-child {
             border-bottom: none;
         }
 
         @media (max-width: 1024px) {
-            .container {
+            .course-container {
                 grid-template-columns: 1fr;
             }
 
-            .hero-section {
+            .course-hero-section {
                 flex-direction: column;
                 text-align: center;
             }
 
-            .hero-image {
+            .course-hero-image {
                 width: 100%;
                 max-width: 500px;
             }
@@ -300,11 +300,11 @@
                 font-size: 32px;
             }
 
-            .hero-section {
+            .course-hero-section {
                 padding: 30px;
             }
 
-            .description-section {
+            .course-description-section {
                 padding: 25px;
             }
         }

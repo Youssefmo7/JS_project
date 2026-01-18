@@ -16,15 +16,15 @@
             const comments = document.getElementById('comments').value;
 
             const feedbackItem = document.createElement('div');
-            feedbackItem.className = 'feedback-item';
+            feedbackItem.className = 'fb-item';
             feedbackItem.style.animation = 'slideIn 0.3s ease';
             
             feedbackItem.innerHTML = `
-                <div class="feedback-header">
-                    <div class="feedback-title">${courseName}</div>
-                    <div class="feedback-stars">${getStars(parseInt(rating))}</div>
+                <div class="fb-item-header">
+                    <div class="fb-item-title">${courseName}</div>
+                    <div class="fb-item-stars">${getStars(parseInt(rating))}</div>
                 </div>
-                ${comments ? `<div class="feedback-comment">${comments}</div>` : ''}
+                ${comments ? `<div class="fb-item-comment">${comments}</div>` : ''}
             `;
 
             feedbackList.insertBefore(feedbackItem, feedbackList.firstChild);

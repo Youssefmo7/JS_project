@@ -19,7 +19,7 @@
         // Toggle alternative payment options
         function toggleAlternatives() {
             const options = document.getElementById('paymentOptions');
-            options.classList.toggle('active');
+            options.classList.toggle('pay-active');
         }
 
         // Process PayPal payment
