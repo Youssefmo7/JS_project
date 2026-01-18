@@ -1,0 +1,120 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+        }
+
+        .AD_container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .AD_sidebar {
+            width: 280px;
+            background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+            padding: 20px;
+            color: white;
+        }
+
+        .AD_nav-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .AD_nav-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .AD_nav-item.AD_active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .AD_nav-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+            background: white;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        /* Main Content */
+        .AD_main-content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .AD_header {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .AD_header h1 {
+            font-size: 2.5em;
+        }
+
+        .AD_chart-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .AD_chart-container h2 {
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 300px !important;
+        }
+
+        /* Buttons */
+        .AD_button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .AD_btn {
+            padding: 20px 60px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            background: #2563eb;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .AD_btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .AD_btn:active {
+            transform: translateY(0);
+        }
