@@ -82,6 +82,7 @@ body {
     box-shadow 0.3s;
   display: flex;
   flex-direction: column; /*for child*/
+  cursor: pointer;
 }
 
 .co-course-card:hover {

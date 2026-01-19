@@ -1,4 +1,6 @@
 
+import {renderCertificates, renderOngoingCourses, renderCompletedCourses} from "./progress&history.js";
+
 const pages = {
     courses : `
     <div class="sd-search-header">
@@ -85,52 +87,9 @@ const pages = {
         </div>
     `,
     progress : `
-    <div class="ph-page-header">
-        <h1>Progress & History Page</h1>
-    </div>
-    
-    <div class="ph-main-container">
-        <div class="ph-sidebar">
-            <div class="ph-nav-item" id="dashboard_icon">
-                <span class="ph-nav-icon">📊</span>
-                <span>Dashboard</span>
-            </div>
-            <!-- <div class="ph-nav-item">
-                <span class="ph-nav-icon">📚</span>
-                <span>Courses</span>
-            </div> -->
-            <div class="ph-nav-item active">
-                <span class="ph-nav-icon">📈</span>
-                <span>Progress</span>
-            </div>
-            <div class="ph-nav-item">
-                <span class="ph-nav-icon">👥</span>
-                <span>Community</span>
-            </div>
-            <div class="ph-nav-item">
-                <span class="ph-nav-icon">⚙️</span>
-                <span>Settings</span>
-            </div>
-            <div class="ph-nav-item">
-                <span class="ph-nav-icon">❓</span>
-                <span>Help</span>
-            </div>
-        </div>
-        
-        <div class="ph-content-area">
+    <div class="ph-content-area">
             <div class="ph-top-bar">
                 <h2 class="ph-content-title">Progress</h2>
-                <div class="ph-top-actions">
-                    <div class="ph-profile-pic">👤</div>
-                    <div class="ph-notification-icon">
-                        🔔
-                        <span class="ph-notification-badge"></span>
-                    </div>
-                    <div class="ph-search-bar">
-                        <input type="text" placeholder="Search" id="searchInput">
-                        <span class="ph-search-icon">🔍</span>
-                    </div>
-                </div>
             </div>
             
             <div class="ph-content-grid">
@@ -156,7 +115,6 @@ const pages = {
                 <a href="#">Contact Us</a>
             </div>
         </div>
-    </div>
     `,
     wishlist : `
     <div class="wl-container">
@@ -190,7 +148,8 @@ const pages = {
         <input type="button" id="wl-remove" value="Remove" />
       </div>
     </div>
-    `
+    `,
+
 }
 
 let content = document.querySelector(".sd-main");
@@ -198,8 +157,14 @@ let dash_buttons = document.querySelectorAll("[data-page]")
 
 dash_buttons.forEach(btn => {
   btn.addEventListener("click", () => {
-    content.innerHTML = pages[btn.dataset.page];
-    dash_buttons.forEach(ele => {ele.classList.remove('sd-selected')});
-    btn.classList.add('sd-selected');
+      content.innerHTML = pages[btn.dataset.page];
+      dash_buttons.forEach(ele => {ele.classList.remove('sd-selected')});
+      btn.classList.add('sd-selected');
+
+      if(btn.dataset.page === 'progress'){
+          renderCertificates();
+        renderOngoingCourses();
+        renderCompletedCourses();
+      }
   });
 });
