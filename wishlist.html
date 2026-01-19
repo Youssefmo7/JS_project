@@ -35,7 +35,11 @@
         </div>
         <input type="text" placeholder="Search" class="wl-search-bar" />
       </div>
-
+      <div class="empty-wishlist">
+        <h2>Your Wishlist is Empty</h2>
+        <p>Start adding courses to your wishlist!</p>
+        <a href="courses.html" class="browse-courses-btn">Browse Courses</a>
+      </div>
       <div class="wl-course-card">
         <img src="./images/programming.jpeg" alt="course image" />
         <div class="wl-course-info">
@@ -60,10 +64,22 @@
         <div class="wl-course-info">
           <div class="wl-course-title">Programming By C++</div>
           <div class="wl-course-instructor">Eng Merihan Mohamed</div>
+        </div>
+        <input type="button" id="wl-enroll" value="Enroll" />
+        <input type="button" id="wl-remove" value="Remove" />
+      </div>
+
+      <div class="wl-course-card">
+        <img src="./images/programming.jpeg" alt="course image" />
+        <div class="wl-course-info">
+          <div class="wl-course-title">Programming By python</div>
+          <div class="wl-course-instructor">Eng Mariem</div>
         </div>
         <input type="button" id="wl-enroll" value="Enroll" />
         <input type="button" id="wl-remove" value="Remove" />
       </div>
     </div>
+
+    <script src="./js/wishList.js"></script>
   </body>
 </html>

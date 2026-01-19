@@ -1,39 +1,31 @@
- // Course data object
-        const courseData = {
-            title: "Machine Learning Fundamentals",
-            category: "Computer Science",
-            instructor: "Dr. Anya Sharma",
-            price: "$199",
-            duration: "12 Weeks",
-            image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
-            description1: "Machine Learning dolor Sit amet, Consectetue sunur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrod exercitation en ullanco laboris nisi ut aliquip ox: ex ea commodo consequat. Lubors nisi ut aliquip ea learning exenmiss not tn:asscunt reproharn. In voluptate allum dolor in repoonontmodo consequat. Duis aute irure dolor in repohenderit in auiatat voluptate viatos ut aliquip ex ea commodo consequat.",
-            description2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrod exercitation en exercitation ullanco laboris nisi ut aliquip ex ea commodo consequat. Duiscamte a eu ixerumir consequat. Duis aute irene intern quis volit esse cilllit dorr in exae eum ali. reprehenderit in voluptate dolore magna aliqua mollit anim id."
-        };
+import {courses} from './data.js'
 
-        // Update course information
-        function updateCourse(data) {
-            document.getElementById('courseTitle').textContent = data.title;
-            document.getElementById('category').textContent = data.category;
-            document.getElementById('instructorName').textContent = data.instructor;
-            document.getElementById('price').textContent = data.price;
-            document.getElementById('duration').textContent = data.duration;
-            document.getElementById('heroImage').src = data.image;
-            document.getElementById('description1').textContent = data.description1;
-            document.getElementById('description2').textContent = data.description2;
-        }
 
-        // Toggle content accordion
-        function toggleContent(element) {
-            element.classList.toggle('active');
-        }
 
-        // Enroll now function
-        function enrollNow() {
-            const courseName = document.getElementById('courseTitle').textContent;
-            const price = document.getElementById('price').textContent;
-            alert(`Enrolling in: ${courseName}\nPrice: ${price}`);
-        }
+let id = new URLSearchParams(window.location.search).get('id');
+// console.log('Course ID:', id);
+// console.log(window.location.search);
 
-        // Initialize the page
-        updateCourse(courseData);
-  
+
+let course = courses.find(c => c.id == id);
+// console.log(course);
+
+if (course) {
+    document.querySelector('.cd-title').textContent = course.courseName;
+    document.querySelector('.cd-section').textContent = course.category;
+    document.querySelector('.cd-description').textContent = course.description;
+    document.querySelector('.cd-course_title img').src = `./images/${course.image}`;
+    document.querySelector('.cd-instructorDetails .cd-name').textContent = course.instructor.name;
+    document.querySelector('.cd-instructorDetails img').src = `./images/${course.instructor.image}`;
+    document.getElementById('course-price').textContent = `${course.price}$`;
+    document.getElementById('course-duration').textContent = course.duration;
+
+    let content = document.querySelector('.cd-content-list');
+    course.content.forEach(line => {
+        let listItem = document.createElement('li');
+        listItem.textContent = line;
+        content.appendChild(listItem);
+    })
+} else {
+    document.body.innerHTML = "<h1>Error404: page not found</h1>";
+}

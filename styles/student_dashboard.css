@@ -42,6 +42,11 @@
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 16px;
+
+    p {
+        width: 70px;
+        text-align: center;
+    }
 }
 
 .sd-main {

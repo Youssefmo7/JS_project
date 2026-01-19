@@ -85,6 +85,11 @@ body {
   color: #333;
 }
 
+.cd-description {
+  font-size: 16px;
+  color: #333;
+}
+
 .cd-courseDetails {
   background: white;
   padding: 25px;
