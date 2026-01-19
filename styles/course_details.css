@@ -1,0 +1,155 @@
+body {
+  background-color: #f0f7ff;
+  margin: 0;
+  padding: 40px;
+  font-family: sans-serif;
+}
+
+.cd-mainpage {
+  display: flex;
+  margin: 50px auto;
+  justify-content: space-around;
+}
+
+.cd-content {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cd-sidebar {
+  display: flex;
+  flex-direction: column; /*for child */
+  width: 30%;
+}
+
+.cd-course_title {
+  display: flex;
+  justify-content: space-around;
+  background-color: #3574d3;
+  height: 200px;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.cd-course_title .cd-header {
+  width: 80%;
+}
+.cd-course_title img {
+  width: auto;
+  height: 150px;
+  margin: 20px;
+  border-radius: 20px;
+}
+.cd-course_title .cd-header .cd-title {
+  font-size: 30px;
+  color: white;
+  font-weight: bolder;
+  margin: 30px 20px 10px 30px;
+}
+.cd-course_title .cd-header .cd-section {
+  display: inline-block;
+  background-color: white;
+  color: #333;
+  padding: 8px 20px;
+  border-radius: 25px;
+  margin-top: 10px;
+  margin-left: 30px;
+  text-align: center;
+}
+
+.cd-course_description {
+  margin-left: 50px;
+}
+
+.cd-instructorDetails {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cd-insImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cd-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.cd-courseDetails {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+.cd-detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.cd-detail-label {
+  color: #333;
+  font-weight: 700;
+}
+
+.cd-detail-value {
+  color: #333;
+  font-weight: 700;
+}
+
+.cd-btn-enroll {
+  width: 100%;
+  background-color: #3b82f6;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.cd-btn-enroll:hover {
+  background-color: #2563eb;
+}
+
+.cd-courseContent {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.cd-content-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cd-content-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #f8f9fa;
+  color: #444;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.cd-content-list li::before {
+  content: "•";
+  color: #3b82f6;
+  font-weight: bold;
+  margin-right: 10px;
+}
