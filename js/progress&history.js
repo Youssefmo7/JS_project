@@ -119,20 +119,24 @@
         }
 
         // Search functionality
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            console.log('Searching for:', searchTerm);
-            // Add search logic here
-        });
+        // document.getElementById('searchInput').addEventListener('input', (e) => {
+        //     const searchTerm = e.target.value.toLowerCase();
+        //     console.log('Searching for:', searchTerm);
+        //     // Add search logic here
+        // });
 
         // Initialize the page
-        renderOngoingCourses();
-        renderCompletedCourses();
-        renderCertificates();
+        // renderOngoingCourses();
+        // renderCompletedCourses();
+        // renderCertificates();
+
+
 
         //////////////////////////////////
 
-        let dashboard_icon = document.querySelector('#dashboard_icon');
-        dashboard_icon.addEventListener("click", () => {
-            window.location.href = "student_dashboard.html";
-        })
+        // let dashboard_icon = document.querySelector('#dashboard_icon');
+        // dashboard_icon.addEventListener("click", () => {
+        //     window.location.href = "student_dashboard.html";
+        // })
+
+        export {renderCertificates, renderOngoingCourses, renderCompletedCourses};
