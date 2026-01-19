@@ -97,3 +97,21 @@ input::placeholder {
 .btn:hover {
   background-color: #3574d3;
 }
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #888;
+}
+.login-link a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #4a86e8;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+

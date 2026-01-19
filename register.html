@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -43,7 +43,7 @@
             <br />
             <label for="re-password">Repeat Password</label>
             <br />
-            <input type="password" required />
+            <input type="password" id="re-password" required />
           </div>
         </div>
         <div class="inputs">
@@ -54,8 +54,13 @@
             <option value="student" selected>Student</option>
           </select>
         </div>
-        <button type="submit" class="btn">Register</button>
+        
+        <button type="submit" id="submit-btn" class="btn">Register</button>
+         <div class="login-link">
+          <p>You have an account <a href="login.html">Login</a></p>
+        </div>
       </form>
     </div>
+    <script src="./js/register.js"></script>
   </body>
 </html>
