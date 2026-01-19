@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Page</title>
-    <link rel="stylesheet" href="./styles/common.css">
     <link rel="stylesheet" href="./styles/feedback.css">
 </head>
 <body>
@@ -12,8 +11,9 @@
         <div class="fb-header">
             <h1>Feedback Page</h1>
         </div>
-        
         <div class="fb-content">
+            <div id="successMessageContainer"></div>
+            
             <div class="fb-form">
                 <form id="feedbackForm">
                     <div class="fb-form-row">
@@ -32,20 +32,16 @@
                             </select>
                         </div>
                     </div>
-                    
                     <div class="fb-form-group">
                         <label for="comments">Comments</label>
                         <textarea id="comments" placeholder="Enter your feedback comments"></textarea>
                     </div>
-                    
                     <button type="submit" class="fb-submit-btn">Submit Feedback</button>
                 </form>
             </div>
-
-            
         </div>
     </div>
-    
+
     <script src="./js/feedback.js"></script>
 </body>
 </html>

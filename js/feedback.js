@@ -1,35 +1,40 @@
+const form = document.getElementById('feedbackForm');
+const successMessageContainer = document.getElementById('successMessageContainer');
+const submitBtn = document.querySelector('.fb-submit-btn');
 
-    const form = document.getElementById('feedbackForm');
-        const feedbackList = document.getElementById('feedbackList');
+function showSuccessMessage() {
+    successMessageContainer.innerHTML = `
+        <div class="success-message">
+            <div class="success-icon">✓</div>
+            <div class="success-text">Thank you! Your feedback has been submitted successfully.</div>
+        </div>
+    `;
 
-        function getStars(rating) {
-            const filled = '★';
-            const empty = '☆';
-            return filled.repeat(rating) + empty.repeat(5 - rating);
-        }
+    setTimeout(() => {
+        successMessageContainer.innerHTML = '';
+    }, 4000);
+}
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const courseName = document.getElementById('courseName').value;
-            const rating = document.getElementById('rating').value;
-            const comments = document.getElementById('comments').value;
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-            const feedbackItem = document.createElement('div');
-            feedbackItem.className = 'fb-item';
-            feedbackItem.style.animation = 'slideIn 0.3s ease';
-            
-            feedbackItem.innerHTML = `
-                <div class="fb-item-header">
-                    <div class="fb-item-title">${courseName}</div>
-                    <div class="fb-item-stars">${getStars(parseInt(rating))}</div>
-                </div>
-                ${comments ? `<div class="fb-item-comment">${comments}</div>` : ''}
-            `;
+    const courseName = document.getElementById('courseName').value;
+    const rating = document.getElementById('rating').value;
+    const comments = document.getElementById('comments').value;
 
-            feedbackList.insertBefore(feedbackItem, feedbackList.firstChild);
+    // Disable button temporarily
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
 
-            form.reset();
+    setTimeout(() => {
+        // Clear form
+        form.reset();
+        
+        // Show success message
+        showSuccessMessage();
 
-            feedbackItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        });
+        // Re-enable button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Feedback';
+    }, 500);
+});
