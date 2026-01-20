@@ -1,4 +1,6 @@
 
+
+/////  courses  /////
 function generateCourses() {
   return [
     {
@@ -225,5 +227,37 @@ function generateCourses() {
 
 let tmpCourses = generateCourses();
 localStorage.setItem('courses', JSON.stringify(tmpCourses))
+/////  courses  /////
 
+
+/////  users  /////
+
+function handleUsers() {
+  return (
+    [
+      {
+        id: 1,
+        email: "youssef@gmail.com",
+        password: "youssef"
+      },
+      {
+        id: 2,
+        email: "mostafa@gmail.com",
+        password: "mostafa"
+      },
+      {
+        id: 3,
+        email: "abdelrahman@gmail.com",
+        password: "abdelrahman"
+      }
+    ]
+  )
+}
+
+// let tmpUsers = handleUsers();
+// localStorage.setItem('users', JSON.stringify(tmpUsers));
+/////  users  /////
+
+/////  exports  /////
+// export const users   = JSON.parse(localStorage.getItem('users'));
 export const courses = JSON.parse(localStorage.getItem('courses'));

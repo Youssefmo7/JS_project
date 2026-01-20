@@ -133,9 +133,9 @@ form.addEventListener("submit", function (e) {
     isValid = false;
   } else if (!isValidEmail(emailInput.value)) {
     showError(emailInput, "Please enter a valid email address");
-    isValid = false;
-  } else if (emailExists(emailInput.value.trim())) {
-    showError(this, "This email is already registered");
+    isValid=false;
+  }else if (emailExists(emailInput.value.trim())) {
+    showError(emailInput, 'This email is already registered');
     isValid = false;
   }
 
@@ -171,11 +171,15 @@ form.addEventListener("submit", function (e) {
       email: emailInput.value.trim(),
       gender: femaleRadio.checked ? "female" : "male",
       password: passwordInput.value,
+      ongoingCourses: [],
+      completedCourses: [],
+      wishlist: [],
+      certificates: []
     };
 
     // console.log('Form submitted successfully:', formData);
-    const existingUsers = JSON.parse(localStorage.getItem("allUsers")) || []; // convert it from json to object js
-    existingUsers.push(userData); // add new user to arrray
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || []; // convert it from json to object js
+    existingUsers.push(userData); // add new user to array
 
     localStorage.setItem("users", JSON.stringify(existingUsers)); // convert it to json and store it
 
