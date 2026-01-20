@@ -24,7 +24,7 @@ if (loginForm) {
 
     if (userMatch) {
       // successful login
-       if (rememberMe) {
+      if (rememberMe) {
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("currentUser", JSON.stringify(userMatch));
       } else {

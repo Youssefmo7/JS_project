@@ -118,7 +118,7 @@ form.addEventListener("submit", function (e) {
   // validate first name
   if (firstNameInput.value.trim() === "") {
     showError(firstNameInput, "First name is required");
-    isValid = false;
+    isValid = false;  
   }
 
   // Validate last name
@@ -171,8 +171,7 @@ form.addEventListener("submit", function (e) {
       email: emailInput.value.trim(),
       gender: femaleRadio.checked ? "female" : "male",
       password: passwordInput.value,
-      ongoingCourses: [],
-      completedCourses: [],
+      courses: [],
       wishlist: [],
       certificates: []
     };

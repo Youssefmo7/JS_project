@@ -29,3 +29,17 @@ if (course) {
 } else {
     document.body.innerHTML = "<h1>Error404: page not found</h1>";
 }
+
+let enrollBtn = document.getElementById('cd-enrollBtn');
+enrollBtn.addEventListener('click', () => {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    let users = JSON.parse(localStorage.getItem('users'));
+    console.log(currentUser);
+
+    enrollBtn.style.setProperty('background-color', '#0ee00e');
+    enrollBtn.textContent = "Enrolled";
+    currentUser.courses.push({id: id, progress: 20});
+    // // users.find(user => user.id == currentUser.id).courses.push({id: id, progress: 0});
+    localStorage.setItem('users', JSON.stringify(users));
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+})
