@@ -5,7 +5,6 @@ const lastNameInput = document.querySelector('input[placeholder="Last"]');
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const repeatPasswordInput = document.getElementById("re-password");
-const roleSelect = document.getElementById("role");
 const femaleRadio = document.getElementById("female");
 const maleRadio = document.getElementById("male");
 
@@ -16,8 +15,10 @@ function isValidEmail(email) {
 }
 
 function emailExists(email) {
-  const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
-  return existingUsers.some(user => user.email.toLowerCase() === email.toLowerCase());
+  const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+  return existingUsers.some(
+    (user) => user.email.toLowerCase() === email.toLowerCase(),
+  );
 }
 // password lenght
 function isStrongPassword(password) {
@@ -75,7 +76,7 @@ emailInput.addEventListener("blur", function () {
   } else if (!isValidEmail(this.value)) {
     showError(this, "Please enter a valid email address");
   } else if (emailExists(this.value.trim())) {
-    showError(this, 'This email is already registered');
+    showError(this, "This email is already registered");
   } else {
     clearError(this);
   }
@@ -132,9 +133,9 @@ form.addEventListener("submit", function (e) {
     isValid = false;
   } else if (!isValidEmail(emailInput.value)) {
     showError(emailInput, "Please enter a valid email address");
-    isValid=false;
-  }else if (emailExists(emailInput.value.trim())) {
-    showError(this, 'This email is already registered');
+    isValid = false;
+  } else if (emailExists(emailInput.value.trim())) {
+    showError(this, "This email is already registered");
     isValid = false;
   }
 
@@ -162,7 +163,6 @@ form.addEventListener("submit", function (e) {
     isValid = false;
   }
 
-  
   // if all data valid submit it
   if (isValid) {
     const userData = {
@@ -171,7 +171,6 @@ form.addEventListener("submit", function (e) {
       email: emailInput.value.trim(),
       gender: femaleRadio.checked ? "female" : "male",
       password: passwordInput.value,
-      role: roleSelect.value,
     };
 
     // console.log('Form submitted successfully:', formData);
