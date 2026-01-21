@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LearnHub - E-Learning Platform</title>
+ <link href="styles/home.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <nav>
+            <a href="#home">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#categories">Categories</a>
+          </nav>
+          <div class="header-buttons">
+            <button class="btn-login">Sign In</button>
+            <button class="btn-register">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="brief" id="home">
+      <div class="container">
+        <div class="brief-content">
+          <div class="brief-text">
+            <h1>Learn Without Limits</h1>
+            <p>
+              Discover thousands of courses from expert instructors. Master new
+              skills, advance your career, and achieve your goals with our
+              flexible online learning platform.
+            </p>
+
+            <div class="site-stats">
+              <div class="stat">
+                <h3>5K+</h3>
+                <p>Active Students</p>
+              </div>
+              <div class="stat">
+                <h3>100+</h3>
+                <p>Courses</p>
+              </div>
+              <div class="stat">
+                <h3>20+</h3>
+                <p>Instructors</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="brief-image">
+            <img src="images/home/home.jpg" alt=" learning" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="courses" id="courses">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Courses</h2>
+          <p>Explore our most popular courses designed by industry experts</p>
+        </div>
+
+        <div class="cards">
+          <div class="course-card">
+            <img src="images/courses/networks.jpg" alt="Computer Networks" />
+            <div class="course-info">
+              <span class="rating">★ 4.8</span>
+              <h3 class="course-name">Computer Networks</h3>
+              <p class="course-ins">Khaled Samir</p>
+              <div class="course-details">
+                <span>👥 15.2K</span>
+                <span class="course-duration">⏱ 24 hours</span>
+              </div>
+              <div class="course-footer">
+                <span class="price">$160.00</span>
+                <button class="btn-view">View</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <img src="images/courses/se.jpg" alt="Software Engineering" />
+            <div class="course-info">
+              <span class="rating">★ 4.9</span>
+              <h3 class="course-name">Software Engineering</h3>
+              <p class="course-ins">Heba Youssef</p>
+              <div class="course-details">
+                <span>👥 8.5K</span>
+                <span class="course-duration">⏱ 26 hours</span>
+              </div>
+              <div class="course-footer">
+                <span class="price">$170.00</span>
+                <button class="btn-view">View</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 3 -->
+          <div class="course-card">
+            <img src="images/courses/se.jpg" alt="Software Engineering" />
+            <div class="course-info">
+              <span class="rating">★ 4.9</span>
+              <h3 class="course-name">Software Engineering</h3>
+              <p class="course-ins">Heba Youssef</p>
+              <div class="course-details">
+                <span>👥 8.5K</span>
+                <span class="course-duration">⏱ 26 hours</span>
+              </div>
+              <div class="course-footer">
+                <span class="price">$170.00</span>
+                <button class="btn-view">View</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <img src="images/courses/se.jpg" alt="Software Engineering" />
+            <div class="course-info">
+              <span class="rating">★ 4.9</span>
+              <h3 class="course-name">Software Engineering</h3>
+              <p class="course-ins">Heba Youssef</p>
+              <div class="course-details">
+                <span>👥 8.5K</span>
+                <span class="course-duration">⏱ 26 hours</span>
+              </div>
+              <div class="course-footer">
+                <span class="price">$170.00</span>
+                <button class="btn-view">View</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="all-courses">
+          <button class="btn-courses">View All Courses</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <h2>Top Categories</h2>
+          <p>Browse courses by category and find the perfect path</p>
+        </div>
+
+       <div class="category-cards">
+  <div class="category-card" onclick="filterCategory('development')">
+    <div class="category-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+    </div>
+    <h3>Development</h3>
+    <p>10 Courses</p>
+  </div>
+
+  <div class="category-card" onclick="filterCategory('business')">
+    <div class="category-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" width="20" height="14" rx="2" ry="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+    </div>
+    <h3>Business</h3>
+    <p>5 Courses</p>
+  </div>
+
+  <div class="category-card" onclick="filterCategory('design')">
+    <div class="category-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.5 1.5"></path><path d="M7.5 13L9 15.5"></path></svg>
+    </div>
+    <h3>Design</h3>
+    <p>5 Courses</p>
+  </div>
+
+  <div class="category-card" onclick="filterCategory('marketing')">
+    <div class="category-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+    </div>
+    <h3>Marketing</h3>
+    <p>2 Courses</p>
+  </div>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feedback">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Students Say</h2>
+          <p>
+            Join thousands of successful students who transformed their careers
+          </p>
+        </div>
+
+        <div class="opinions">
+          <div class="opinion-card">
+            <div class="quote">"</div>
+            <div class="stars">★★★★★</div>
+            <p class="opinion-text">
+              This platform completely transformed my career! The courses are
+              well-structured, and the instructors are top-notch. I went from
+              beginner to landing my dream job in just 6 months.
+            </p>
+            <div class="author">
+              <div class="author-icon">AA</div>
+              <div class="author-info">
+                <h4>Abdelrahman Ali</h4>
+                <p>Software Developer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="opinion-card">
+            <div class="quote">"</div>
+            <div class="stars">★★★★★</div>
+            <p class="opinion-text">
+              The flexibility of learning at my own pace while working full-time
+              was exactly what I needed. The quality of content is exceptional
+              and worth every penny.
+            </p>
+            <div class="author">
+              <div class="author-icon">YM</div>
+              <div class="author-info">
+                <h4>Youssef Mohamed</h4>
+                <p>Software Engineering</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="opinion-card">
+            <div class="quote">"</div>
+            <div class="stars">★★★★★</div>
+            <p class="opinion-text">
+              I've tried several online learning platforms, but this platform
+              stands out. The community support and practical projects helped me
+              build a strong portfolio.
+            </p>
+            <div class="author">
+              <div class="author-icon">MA</div>
+              <div class="author-info">
+                <h4>Mostafa Ahmed</h4>
+                <p>Backend-Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <script src="js/home.js">
+    
+  </script>
+  </body>
+</html>
