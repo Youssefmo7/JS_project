@@ -80,6 +80,18 @@ body {
 .browse-courses-btn:hover {
   background-color: #0056b3;
 }
+
+.wl-container {
+  overflow: auto;
+}
+.wl-container::-webkit-scrollbar {
+  width: 8px;
+}
+.wl-container::-webkit-scrollbar-thumb {
+  background-color: #87b3fa;
+  border-radius: 4px;
+}
+
 .wl-course-card {
   background: white;
   border-radius: 20px;

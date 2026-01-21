@@ -90,6 +90,14 @@ body {
   color: #333;
 }
 
+.cd-course_description {
+  margin-left: 0px;
+  background-color: white;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
 .cd-courseDetails {
   background: white;
   padding: 25px;

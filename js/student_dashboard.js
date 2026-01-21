@@ -1,5 +1,6 @@
 import {courses} from './data.js';
 import {renderCertificates, renderOngoingCourses, renderCompletedCourses} from "./progress&history.js";
+import { renderWishlist } from './wishList.js';
 
 if(!JSON.parse(localStorage.getItem('currentUser'))) {
     window.location.href = 'login.html';
@@ -56,35 +57,6 @@ const pages = {
     `,
     wishlist : `
     <div class="wl-container">
-
-      <div class="wl-course-card">
-        <img src="./images/programming.jpeg" alt="course image" />
-        <div class="wl-course-info">
-          <div class="wl-course-title">Programming By C++</div>
-          <div class="wl-course-instructor">Eng Merihan Mohamed</div>
-        </div>
-        <input type="button" id="wl-enroll" value="Enroll" />
-        <input type="button" id="wl-remove" value="Remove" />
-      </div>
-
-      <div class="wl-course-card">
-        <img src="./images/programming.jpeg" alt="course image" />
-        <div class="wl-course-info">
-          <div class="wl-course-title">Programming By C++</div>
-          <div class="wl-course-instructor">Eng Merihan Mohamed</div>
-        </div>
-        <input type="button" id="wl-enroll" value="Enroll" />
-        <input type="button" id="wl-remove" value="Remove" />
-      </div>
-      <div class="wl-course-card">
-        <img src="./images/programming.jpeg" alt="course image" />
-        <div class="wl-course-info">
-          <div class="wl-course-title">Programming By C++</div>
-          <div class="wl-course-instructor">Eng Merihan Mohamed</div>
-        </div>
-        <input type="button" id="wl-enroll" value="Enroll" />
-        <input type="button" id="wl-remove" value="Remove" />
-      </div>
     </div>
     `,
 
@@ -97,15 +69,16 @@ dash_buttons.forEach(btn => {
     btn.addEventListener("click", () => {
     content.innerHTML = pages[btn.dataset.page];
     dash_buttons.forEach(ele => {ele.classList.remove('sd-selected')});
-    btn.classList.add('sd-selected');
-
-    if(btn.dataset.page === 'progress'){
-        renderCertificates();
-        renderOngoingCourses();
-        renderCompletedCourses();
-    } else if(btn.dataset.page === 'courses') {
-        renderStudentCourses();
-    }
+        btn.classList.add('sd-selected');
+        if(btn.dataset.page === 'progress'){
+            renderCertificates();
+            renderOngoingCourses();
+            renderCompletedCourses();
+        } else if(btn.dataset.page === 'courses') {
+            renderStudentCourses();
+        } else if(btn.dataset.page === 'wishlist') {
+            renderWishlist();
+        }
   });
 });
 
