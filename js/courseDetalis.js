@@ -39,7 +39,7 @@ enrollBtn.addEventListener('click', () => {
     enrollBtn.style.setProperty('background-color', '#0ee00e');
     enrollBtn.textContent = "Enrolled";
     currentUser.courses.push({id: id, progress: 20});
-    // // users.find(user => user.id == currentUser.id).courses.push({id: id, progress: 0});
+    users.find(user => user.id == currentUser.id).courses.push({id: id, progress: 0});
     localStorage.setItem('users', JSON.stringify(users));
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
 })
