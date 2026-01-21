@@ -22,7 +22,7 @@ export function renderWishlist() {
   });
 
   // Add event listeners for View buttons
-  document.querySelectorAll('#wl-enroll').forEach(button => {
+  document.querySelectorAll('#wl-view').forEach(button => {
     button.addEventListener('click', function() {
       window.location.href = `./courseDetails.html?id=${button.dataset.id}`;
     });
