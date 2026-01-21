@@ -1,6 +1,16 @@
 import { courses } from "./data.js";
 
-document.querySelector('.co-courses-elem').innerHTML = courses.map(course => `
+let wishlist = JSON.parse(localStorage.getItem('currentUser')).wishlist;
+
+document.querySelector('.co-courses-elem').innerHTML = courses.map(course => {
+  let text = "Wishlist";
+  let style = "";
+  console.log(wishlist.indexOf(`${course.id}`));
+  if(wishlist.indexOf(`${course.id}`) != -1) {
+    text = "Added";
+    style = "background-color: #0fc60f; color: white; border-color:#0fc60f; font-weight:bold;";
+  }
+  let innerHTML = `
   <div class="co-course-card" data-id="${course.id}">
     <img src="./images/${course.image}" alt="${course.courseName}" class="co-course-image">
     <span class="co-course-category">${course.category}</span>
@@ -8,10 +18,12 @@ document.querySelector('.co-courses-elem').innerHTML = courses.map(course => `
     <div class="co-course-instructor">${course.instructor.name}</div>
     <div class="co-course-footer">
       <div class="co-course-price">$${course.price}</div> 
-      <button class="co-wishlist-btn" data-id="${course.id}">Wishlist</button>
+      <button class="co-wishlist-btn" style="${style}" data-id="${course.id}">${text}</button>
     </div>
   </div>
-`).join("");
+  `
+  return innerHTML;
+}).join("");
 
 
 document.querySelectorAll('.co-course-card').forEach(card => {
@@ -20,17 +32,22 @@ document.querySelectorAll('.co-course-card').forEach(card => {
   })
 })
 
+// document.querySelector().style.cssText
+
 document.querySelectorAll('.co-wishlist-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
 
     btn.textContent = "Added";
+    btn.style.cssText = "background-color: #0fc60f; color: white; border-color:#0fc60f; font-weight:bold;";
+    // btn.removeEventListener('click');
 
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
     let users = JSON.parse(localStorage.getItem('users'));
     // console.log(currentUser);
-    currentUser.wishlist.push(btn.dataset.id);
-    users.find(user => user.id == currentUser.id).wishlist.push(btn.dataset.id);
+    let wishlist = [...new Set([...currentUser.wishlist, btn.dataset.id])];
+    currentUser.wishlist = wishlist;
+    users.find(user => user.id == currentUser.id).wishlist = wishlist;
     localStorage.setItem('users', JSON.stringify(users));
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
   })

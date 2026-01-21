@@ -4,6 +4,8 @@ import { courses } from "./data.js";
 let ongoingCourses = JSON.parse(localStorage.getItem('currentUser')).courses
 .filter(course => course.progress < 100);
 
+if(ongoingCourses.length > 3) ongoingCourses = [ongoingCourses[0], ongoingCourses[1], ongoingCourses[2]];
+
 ongoingCourses = ongoingCourses.map(ele => {
     let ret = courses.find(course => course.id == ele.id);
     ret.progress = ele.progress
