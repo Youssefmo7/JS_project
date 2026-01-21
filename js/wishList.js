@@ -15,7 +15,7 @@ export function renderWishlist() {
         <div class="wl-course-title">${course.courseName}</div> 
         <div class="wl-course-instructor">${course.instructor.name}</div>
       </div>
-      <input type="button" id="wl-enroll" value="View" data-id="${course.id}"/>
+      <input type="button" id="wl-view" value="View" data-id="${course.id}"/>
       <input type="button" id="wl-remove" value="Remove" data-id="${course.id}"/>
     `
     parent.appendChild(div);
