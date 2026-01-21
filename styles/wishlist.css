@@ -124,8 +124,8 @@ body {
 }
 
 /* buttons */
-#wl-enroll,
-#wl-remove {
+.wl-view,
+.wl-remove {
   padding: 12px 30px;
   border-radius: 25px;
   cursor: pointer;
@@ -135,23 +135,23 @@ body {
   border-color: #4a86e8;
 }
 /* enroll button */
-#wl-enroll {
+.wl-view {
   background: #4a86e8;
   color: white;
 }
 
-#wl-enroll:hover {
+.wl-view:hover {
     background-color: #2563b8;
     transform: scale(1.05);
 }
 
 /* remove button */
-#wl-remove {
+.wl-remove {
   background-color: white;
   color: #4a86e8;
 }
 
-#wl-remove:hover {
+.wl-remove:hover {
     background-color: #f0f8ff;
     transform: scale(1.05);
 }

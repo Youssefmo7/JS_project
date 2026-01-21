@@ -58,7 +58,7 @@ const pages = {
     <div class="wl-container">
 
       <div class="wl-course-card">
-        <img src="./images/programming.jpeg" alt="course image" />
+        <img src="./images/courses/programming.jpg" alt="course image" />
         <div class="wl-course-info">
           <div class="wl-course-title">Programming By C++</div>
           <div class="wl-course-instructor">Eng Merihan Mohamed</div>
@@ -68,7 +68,7 @@ const pages = {
       </div>
 
       <div class="wl-course-card">
-        <img src="./images/programming.jpeg" alt="course image" />
+        <img src="./images/courses/programming.jpg" alt="course image" />
         <div class="wl-course-info">
           <div class="wl-course-title">Programming By C++</div>
           <div class="wl-course-instructor">Eng Merihan Mohamed</div>
@@ -77,7 +77,7 @@ const pages = {
         <input type="button" id="wl-remove" value="Remove" />
       </div>
       <div class="wl-course-card">
-        <img src="./images/programming.jpeg" alt="course image" />
+        <img src="./images/courses/programming.jpg" alt="course image" />
         <div class="wl-course-info">
           <div class="wl-course-title">Programming By C++</div>
           <div class="wl-course-instructor">Eng Merihan Mohamed</div>
