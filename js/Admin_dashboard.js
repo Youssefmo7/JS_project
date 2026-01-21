@@ -92,4 +92,9 @@
                 deleteModal.style.display = 'none';
             }
         }
+        // Courses 
+        document.getElementById("AD-courses").addEventListener("click", function() {
+             window.location.href = "./courses.html";}); 
+       
+        
     
