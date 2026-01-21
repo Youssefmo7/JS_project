@@ -68,6 +68,16 @@ body {
     flex: 1;
     padding: 30px 40px;
     background: white;
+    overflow: auto;
+    width: 100%;
+}
+.ph-content-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ph-content-area::-webkit-scrollbar-thumb {
+    background-color: #87b3fa;
+    border-radius: 4px;
 }
 
 .ph-top-bar {
@@ -165,6 +175,7 @@ body {
 
 .ph-course-item {
     display: flex;
+    align-items: center;
     gap: 15px;
     padding: 20px;
     border: 2px solid #e2e8f0;
@@ -179,16 +190,14 @@ body {
 }
 
 .ph-course-icon {
-    width: 50px;
-    height: 50px;
+    width: 130px;   
+    overflow: hidden;
     border-radius: 10px;
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 24px;
-    flex-shrink: 0;
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 }
 
 .ph-course-details {
@@ -245,7 +254,7 @@ body {
     background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
     color: white;
     border: none;
-    padding: 10px 24px;
+    padding: 14px 24px;
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;

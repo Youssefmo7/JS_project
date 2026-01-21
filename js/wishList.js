@@ -27,4 +27,16 @@ export function renderWishlist() {
       window.location.href = `./courseDetails.html?id=${button.dataset.id}`;
     });
   });
+
+  document.querySelectorAll('input[value="Remove"]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.target.parentElement.style.setProperty('display', 'none');
+      let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      let users = JSON.parse(localStorage.getItem('users'));
+
+      let newList = currentUser.wishlist.filter(ele => ele != btn.dataset.id);
+      currentUser.wishlist = newList;
+      localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    })
+  })
 }
