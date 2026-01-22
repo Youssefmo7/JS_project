@@ -1,12 +1,14 @@
 import { courses } from "./data.js";
 
 let wishlist = JSON.parse(localStorage.getItem('currentUser')).wishlist;
+let loggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+// console.log(loggedIn, typeof(loggedIn));
 
 document.querySelector('.co-courses-elem').innerHTML = courses.map(course => {
   let text = "Wishlist";
   let style = "";
-  console.log(wishlist.indexOf(`${course.id}`));
-  if(wishlist.indexOf(`${course.id}`) != -1) {
+  // console.log(wishlist.indexOf(`${course.id}`));
+  if(loggedIn && wishlist.indexOf(`${course.id}`) != -1) {
     text = "Added";
     style = "background-color: #0fc60f; color: white; border-color:#0fc60f; font-weight:bold;";
   }

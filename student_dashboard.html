@@ -11,29 +11,29 @@
     <title>Dashboard</title>
 </head>
 <body>
-<div class="co-nav-bar">
-    <div class="co-links">
-            <a href="#home">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-        </svg>
-        Home
-    </a>
-    <a href="courses.html">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
-        </svg>
-        Courses
-    </a>
-    <a href="student_dashboard.html">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-        </svg>
-        Profile
-    </a>
+<header>
+      <!-- <div class="container"> -->
+        <div class="header-content">
+          <nav>
+            <a href="home.html">Home</a>
+            <a href="home.html#courses">Courses</a>
+            <a href="home.html#categories">Categories</a>
+            <a href="home.html#contact">Contact Us</a>
+            </nav>
+            <div class="header-buttons">
+            <button class="btn-login">Sign In</button>
+            <button class="btn-register">Sign Up</button>
+            </div>
+            <div class="header-buttons-login">
+            <button>
+                <div class="image-box"><img src="./images/instructors/ahmed.jpg" alt=""></div>
+                <p>Ahmed Alaa</p>
+            </button>
+            <button id="logout-btn">logout</button>
+          </div>
         </div>
-        <!-- <input type="text" placeholder="Search" class="co-search-bar" /> -->
-</div>
+      <!-- </div> -->
+    </header>
 <div class="sd-container">
     <div class="sd-sidebar">
         <div class="header"><h3>Student Dashboard</h3></div>
@@ -150,7 +150,7 @@
     </div>
 </div>
 <script src="./js/student_dashboard.js" type="module"></script>
-<!-- <script src="./js/progress&history.js" type="module"></script> -->
+<script src="./js/home.js" type="module"></script>
 </body>
 </html>
 </div>

@@ -7,13 +7,13 @@
 
 .sd-container {
     display: flex;
-    min-height: 778px;
+    min-height: 772px;
     width: 100%;
 }
 
 .sd-sidebar {
     width: 12%;
-    height: 778px;
+    height: 772px;
     background: linear-gradient(#cfe5fd, #81affa);   
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@
 
 .sd-main {
     flex: 1;
-    height: 778px;
+    height: 772px;
     display: flex;
     flex-direction: column;
     padding: 20px;
