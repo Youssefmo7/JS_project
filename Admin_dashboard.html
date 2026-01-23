@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="./styles/Admin_dashboard.css">
-    
 </head>
 <body>
     <div class="AD_sidebar">
@@ -21,12 +20,6 @@
             </svg>
             Categories
         </div>
-        <div class="AD_nav-item" id="AD-students">
-            <svg fill="currentColor" viewBox="0 0 24 24">
-                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-            </svg>
-            Students
-        </div>
     </div>
 
     <div class="AD_main-content">
@@ -35,7 +28,7 @@
         <div class="AD_stats-grid">
             <div class="AD_stat-card">
                 <div class="AD_stat-label">Total Courses:</div>
-                <div class="AD_stat-value">45</div>
+                <div class="AD_stat-value" id="AD_totalCourses">0</div>
             </div>
             <div class="AD_stat-card">
                 <div class="AD_stat-label">New Students:</div>
@@ -43,7 +36,7 @@
             </div>
             <div class="AD_stat-card">
                 <div class="AD_stat-label">Categories:</div>
-                <div class="AD_stat-value">8</div>
+                <div class="AD_stat-value" id="AD_totalCategories">0</div>
             </div>
         </div>
 
@@ -59,20 +52,33 @@
                 <svg fill="currentColor" viewBox="0 0 24 24">
                     <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
                 </svg>
-                Add
+                Add Course
             </button>
             <button class="AD_btn" id="AD_editBtn">
                 <svg fill="currentColor" viewBox="0 0 24 24">
                     <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
                 </svg>
-                Edit
+                Edit Selected
             </button>
             <button class="AD_btn" id="AD_deleteBtn">
                 <svg fill="currentColor" viewBox="0 0 24 24">
                     <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
                 </svg>
-                Delete
+                Delete Selected
             </button>
+        </div>
+
+        <!-- Course List -->
+        <div class="AD_course-list">
+            <h2>Course List</h2>
+            <div id="AD_courseTableContainer">
+                <div class="AD_empty-state">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
+                    </svg>
+                    <p>No courses yet. Click "Add Course" to get started!</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -82,16 +88,36 @@
             <span class="AD_close" id="AD_closeAdd">&times;</span>
             <h2 class="AD_modal-header">Add New Course</h2>
             <div class="AD_form-group">
-                <label class="AD_form-label">Course Name:</label>
+                <label class="AD_form-label">Course Name: *</label>
                 <input type="text" class="AD_form-input" id="AD_courseName" placeholder="Enter course name">
             </div>
             <div class="AD_form-group">
-                <label class="AD_form-label">Description:</label>
+                <label class="AD_form-label">Course Category: *</label>
+                <input type="text" class="AD_form-input" id="AD_courseCategoriy" placeholder="Enter course category">
+            </div>
+            <div class="AD_form-group">
+                <label class="AD_form-label">Course Price: *</label>
+                <input type="number" class="AD_form-input" id="AD_coursePrice" placeholder="Enter course price" min="0" step="0.01">
+            </div>
+            <div class="AD_form-group">
+                <label class="AD_form-label">Course Photo :</label>
+                <input type="file" class="AD_form-input" id="AD_coursePhoto" placeholder="Enter course photo ">
+            </div>
+            <div class="AD_form-group">
+                <label class="AD_form-label">Course Duration (hours):</label>
+                <input type="number" class="AD_form-input" id="AD_courseDuration" placeholder="Enter course duration" min="0">
+            </div>
+            <div class="AD_form-group">
+                <label class="AD_form-label">Course Description: *</label>
                 <textarea class="AD_form-textarea" id="AD_courseDesc" placeholder="Enter course description"></textarea>
             </div>
             <div class="AD_form-group">
-                <label class="AD_form-label">Instructor:</label>
+                <label class="AD_form-label">Instructor: *</label>
                 <input type="text" class="AD_form-input" id="AD_instructor" placeholder="Enter instructor name">
+            </div>
+            <div class="AD_form-group">
+                <label class="AD_form-label">Instructor Picture :</label>
+                <input type="file" class="AD_form-input" id="AD_instructor_Picture" placeholder="Enter instructor picture ">
             </div>
             <div class="AD_form-actions">
                 <button class="AD_submit-btn" id="AD_submitAdd">Submit</button>
@@ -106,16 +132,36 @@
             <span class="AD_close" id="AD_closeEdit">&times;</span>
             <h2 class="AD_modal-header">Edit Course</h2>
             <div class="AD_form-group">
-                <label class="AD_form-label">Course Name:</label>
-                <input type="text" class="AD_form-input" id="AD_editCourseName" placeholder="Enter course name">
+                <label class="AD_form-label">Course Name: *</label>
+                <input type="text" class="AD_form-input" id="AD_editCourseName" placeholder="Edit course name">
             </div>
             <div class="AD_form-group">
-                <label class="AD_form-label">Description:</label>
-                <textarea class="AD_form-textarea" id="AD_editCourseDesc" placeholder="Enter course description"></textarea>
+                <label class="AD_form-label">Course Category: *</label>
+                <input type="text" class="AD_form-input" id="AD_editCourseCategoriy" placeholder="Edit course category">
             </div>
             <div class="AD_form-group">
-                <label class="AD_form-label">Instructor:</label>
-                <input type="text" class="AD_form-input" id="AD_editInstructor" placeholder="Enter instructor name">
+                <label class="AD_form-label">Course Price: *</label>
+                <input type="number" class="AD_form-input" id="AD_editCoursePrice" placeholder="Edit course price" min="0" step="0.01">
+            </div>
+            <div class="AD_form-group">
+                <label class="AD_form-label">Course Photo :</label>
+                <input type="file" class="AD_form-input" id="AD_editCoursePhoto" placeholder="Edit course photo ">
+            </div>
+            <div class="AD_form-group">
+                <label class="AD_form-label">Course Duration (hours):</label>
+                <input type="number" class="AD_form-input" id="AD_editCourseDuration" placeholder="Edit course duration" min="0">
+            </div>
+            <div class="AD_form-group">
+                <label class="AD_form-label">Description: *</label>
+                <textarea class="AD_form-textarea" id="AD_editCourseDesc" placeholder="Edit course description"></textarea>
+            </div>
+            <div class="AD_form-group">
+                <label class="AD_form-label">Instructor: *</label>
+                <input type="text" class="AD_form-input" id="AD_editInstructor" placeholder="Edit instructor name">
+            </div>
+            <div class="AD_form-group">
+                <label class="AD_form-label">Instructor Picture :</label>
+                <input type="file" class="AD_form-input" id="AD_editInstructor_Picture" placeholder="Edit instructor picture ">
             </div>
             <div class="AD_form-actions">
                 <button class="AD_submit-btn" id="AD_submitEdit">Update</button>
@@ -129,7 +175,7 @@
         <div class="AD_modal-content">
             <span class="AD_close" id="AD_closeDelete">&times;</span>
             <h2 class="AD_modal-header">Delete Course</h2>
-            <p style="font-size: 18px; color: #333; margin: 30px 0;">Are you sure you want to delete this course? This action cannot be undone.</p>
+            <p style="font-size: 18px; color: #333; margin: 30px 0;">Are you sure you want to delete "<span id="AD_deleteCourseName"></span>"? This action cannot be undone.</p>
             <div class="AD_form-actions">
                 <button class="AD_submit-btn" id="AD_confirmDelete" style="background: #dc3545;">Delete</button>
                 <button class="AD_cancel-btn" id="AD_cancelDelete">Cancel</button>
@@ -144,8 +190,6 @@
         <div class="AD_success-text" id="AD_successText">Course added successfully!</div>
     </div>
 
-    <script src="./js/Admin_dashboard.js">
-        
-    </script>
+    <script src="./js/Admin_dashboard.js"> </script>
 </body>
 </html>
