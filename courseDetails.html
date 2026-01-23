@@ -7,34 +7,38 @@
     <title>Course Details</title>
 
     <link href="./styles/course_details.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/common.css" />
   </head>
 
   <body>
     <header>
-        <div class="header-content">
-          <nav>
-            <a href="home.html">Home</a>
-            <a href="home.html#courses">Courses</a>
-            <a href="home.html#categories">Categories</a>
-            <a href="home.html#contact">Contact Us</a>
-          </nav>
-          <div class="header-buttons">
-            <button class="btn-login">Sign In</button>
-            <button class="btn-register">Sign Up</button>
-          </div>
-          <div class="header-buttons-login">
-            <button id="profile-btn">
-              <div class="image-box"><img src="./images/instructors/ahmed.jpg" alt=""></div>
-              <p>Ahmed Alaa</p>
-            </button>
-            <button id="logout-btn">logout</button>
-            <div class="nav-popup">
-              <div class="popup-link"><a href="student_dashboard.html">Dashboard</a></div>
-              <div class="popup-link"><a href="profile.html">Profile</a></div>
+      <div class="header-content">
+        <nav>
+          <a href="home.html">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="home.html#categories">Categories</a>
+          <a href="home.html#contact">Contact Us</a>
+        </nav>
+        <div class="header-buttons">
+          <button class="btn-login">Sign In</button>
+          <button class="btn-register">Sign Up</button>
+        </div>
+        <div class="header-buttons-login">
+          <button id="profile-btn">
+            <div class="image-box">
+              <img src="./images/instructors/ahmed.jpg" alt="" />
             </div>
+            <p>Ahmed Alaa</p>
+          </button>
+          <button id="logout-btn">logout</button>
+          <div class="nav-popup">
+            <div class="popup-link">
+              <a href="student_dashboard.html">Dashboard</a>
+            </div>
+            <div class="popup-link"><a href="profile.html">Profile</a></div>
           </div>
         </div>
+      </div>
     </header>
     <!-- nav bar -->
     <div class="cd-mainpage">
@@ -85,11 +89,7 @@
 
       <div class="cd-sidebar">
         <div class="cd-instructorDetails">
-          <img
-            src=""
-            class="cd-insImg"
-            alt="Eng Mostafa Ahmed"
-          />
+          <img src="" class="cd-insImg" alt="Instructor Img" />
           <div class="cd-name">Eng Mostafa Ahmed</div>
         </div>
 
@@ -107,6 +107,7 @@
           </div>
 
           <button class="cd-btn-enroll" id="cd-enrollBtn">Enroll Now</button>
+          <button class="cd-btn-enroll" id="cd-resumeBtn">Resume Course</button>
         </div>
 
         <div class="cd-courseContent">

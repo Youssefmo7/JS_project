@@ -49,7 +49,7 @@ document.querySelectorAll('.co-wishlist-btn').forEach(btn => {
     // console.log(currentUser);
     let wishlist = [...new Set([...currentUser.wishlist, btn.dataset.id])];
     currentUser.wishlist = wishlist;
-    users.find(user => user.id == currentUser.id).wishlist = wishlist;
+    users.find(user => user.email == currentUser.email).wishlist = wishlist;
     localStorage.setItem('users', JSON.stringify(users));
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
   })

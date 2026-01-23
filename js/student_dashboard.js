@@ -1,13 +1,18 @@
-import {courses} from './data.js';
-import {renderCertificates, renderOngoingCourses, renderCompletedCourses} from "./progress&history.js";
-import { renderWishlist } from './wishList.js';
+import { courses } from "./data.js";
+import {
+  renderCertificates,
+  renderOngoingCourses,
+  renderCompletedCourses,
+} from "./progress&history.js";
+import { renderWishlist } from "./wishList.js";
 
-if(!JSON.parse(localStorage.getItem('currentUser'))) {
-    window.location.href = 'login.html';
+if (!JSON.parse(localStorage.getItem("currentUser"))) {
+  window.location.href = "login.html";
 }
 
+
 const pages = {
-    courses : `
+  courses: `
     <div class="sd-search-header">
         <div class="sd-search-bar">
             <div class="sd-icon1">
@@ -25,7 +30,7 @@ const pages = {
     </div>
     <div class="sd-courses"></div>
     `,
-    progress : `
+  progress: `
     <div class="ph-content-area">
             <div class="ph-top-bar">
                 <h2 class="ph-content-title">Progress</h2>
@@ -55,46 +60,46 @@ const pages = {
             </div>
         </div>
     `,
-    wishlist : `
+  wishlist: `
     <div class="wl-container">
     </div>
     `,
-
-}
+};
 
 let content = document.querySelector(".sd-main");
-let dash_buttons = document.querySelectorAll("[data-page]")
+let dash_buttons = document.querySelectorAll("[data-page]");
 
-dash_buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
+dash_buttons.forEach((btn) => {
+  btn.addEventListener("click", () => {
     content.innerHTML = pages[btn.dataset.page];
-    dash_buttons.forEach(ele => {ele.classList.remove('sd-selected')});
-        btn.classList.add('sd-selected');
-        if(btn.dataset.page === 'progress'){
-            renderCertificates();
-            renderOngoingCourses();
-            renderCompletedCourses();
-        } else if(btn.dataset.page === 'courses') {
-            renderStudentCourses();
-        } else if(btn.dataset.page === 'wishlist') {
-            renderWishlist();
-        }
+    dash_buttons.forEach((ele) => {
+      ele.classList.remove("sd-selected");
+    });
+    btn.classList.add("sd-selected");
+    if (btn.dataset.page === "progress") {
+      renderCertificates();
+      renderOngoingCourses();
+      renderCompletedCourses();
+    } else if (btn.dataset.page === "courses") {
+      renderStudentCourses();
+    } else if (btn.dataset.page === "wishlist") {
+      renderWishlist();
+    }
   });
 });
 
 ///////////////////////////
 
 function renderStudentCourses() {
-    let coursesCards = document.querySelector('.sd-courses');
-    let studentCourses = JSON.parse(localStorage.getItem('currentUser'));
-    studentCourses = studentCourses.courses;
-    studentCourses.forEach(course => {
-        if(course.id < 100) {
-            let courseData = courses.find(ele => ele.id == course.id);
-            let card = document.createElement('div');
-            card.classList.add('sd-course-card');
-            card.innerHTML = 
-            `
+  let coursesCards = document.querySelector(".sd-courses");
+  let studentCourses = JSON.parse(localStorage.getItem("currentUser"));
+  studentCourses = studentCourses.courses;
+  studentCourses.forEach((course) => {
+    if (course.id < 100) {
+      let courseData = courses.find((ele) => ele.id == course.id);
+      let card = document.createElement("div");
+      card.classList.add("sd-course-card");
+      card.innerHTML = `
             <img class="sd-image" src="./images/${courseData.image}" alt="${courseData.courseName}">
             <p class="sd-name">${courseData.courseName}</p>
             <p class="sd-description">${courseData.description}</p>
@@ -108,7 +113,9 @@ function renderStudentCourses() {
             </div>
             `;
 
-            coursesCards.appendChild(card);
-        }
-    })
+      coursesCards.appendChild(card);
+    }
+  });
 }
+
+
