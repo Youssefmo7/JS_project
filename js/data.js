@@ -258,6 +258,20 @@ function handleUsers() {
 // localStorage.setItem('users', JSON.stringify(tmpUsers));
 /////  users  /////
 
+
+///// course videos /////
+const courseVids = [
+  {
+    id: "3",
+    videos: ["DP1.mp4", "DP2.mp4", "DP3.mp4", "DP4.mp4"]
+  }
+]
+localStorage.setItem('courseVideos', JSON.stringify(courseVids));
+//// course videos /////
+
 /////  exports  /////
 // export const users   = JSON.parse(localStorage.getItem('users'));
 export const courses = JSON.parse(localStorage.getItem('courses'));
+export { courseVids }
+
+

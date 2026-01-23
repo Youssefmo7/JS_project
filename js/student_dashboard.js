@@ -52,12 +52,6 @@ const pages = {
                 <h3 class="ph-section-title">Completed Courses</h3>
                 <div id="completedCourses"></div>
             </div>
-            
-            <div class="ph-footer">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
-            </div>
         </div>
     `,
   wishlist: `
@@ -109,13 +103,16 @@ function renderStudentCourses() {
                     <div class="sd-bar"><div class="sd-fill" style="width:${course.progress}%;"></div></div>
                     <p class="sd-percent">${course.progress}% Complete</p>
                 </div>
-                <button class="sd-resume-btn">Resume</button>
+                <button class="sd-resume-btn" data-id="${course.id}">Resume</button>
             </div>
             `;
+            coursesCards.appendChild(card);
+        }
+    })
 
-      coursesCards.appendChild(card);
-    }
-  });
+    document.querySelectorAll('.sd-resume-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+            window.location.href = `./resume_course.html?id=${btn.dataset.id}`;
+        })
+    })
 }
-
-
