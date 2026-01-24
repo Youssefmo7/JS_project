@@ -1,36 +1,40 @@
 const loginForm = document.querySelector("form");
 
+
 if (loginForm) {
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
-   
-    const rememberMe = document.getElementById("remember_me").checked;
+    let email = document.getElementById("loginEmail").value.trim();
+    let password = document.getElementById("loginPassword").value.trim();
+
+    let rememberMe = document.getElementById("remember_me").checked;
 
     if (!email || !password) {
       showError("Please fill in all fields.");
       return;
     }
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-   
-    const userMatch = users.find(
-      (user) => user.email === email && user.password === password
+    let userMatch = users.find(
+      (user) => user.email === email && user.password === password,
     );
 
     if (userMatch) {
-      
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("currentUser", JSON.stringify(userMatch));
-      
+
       if (!rememberMe) {
         sessionStorage.setItem("tempSession", "true");
       }
 
-      window.location.href = "student_dashboard.html";
+      // checkm if admin or student
+      if (userMatch.role === "admin") {
+        window.location.href = "admin_dashboard.html";
+      } else {
+        window.location.href = "student_dashboard.html";
+      }
     } else {
       showError("Invalid email or password.");
     }
@@ -52,3 +56,4 @@ function showError(message) {
 
   loginForm.appendChild(errorDiv);
 }
+

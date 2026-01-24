@@ -171,6 +171,7 @@ form.addEventListener("submit", function (e) {
       email: emailInput.value.trim(),
       gender: femaleRadio.checked ? "female" : "male",
       password: passwordInput.value,
+      role :"student",
       courses: [],
       wishlist: [],
       certificates: []
