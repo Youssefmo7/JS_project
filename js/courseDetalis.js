@@ -126,7 +126,7 @@ function unlockCourse(id) {
 
       userInList.courses.push(newCourse);
       localStorage.setItem("users", JSON.stringify(users)); // This saves it forever
-      console.log("Permanent storage updated for user:", currentUser.email);
+     
     }
   }
 

@@ -1,4 +1,6 @@
-import { courses } from "./data.js";
+//import { courses } from "./data.js";
+
+const courses = JSON.parse(localStorage.getItem("courses")) || []; // get courses from localstorage
 
 export function renderWishlist() {
   let parent = document.querySelector('.wl-container');
@@ -31,12 +33,19 @@ export function renderWishlist() {
   document.querySelectorAll('input[value="Remove"]').forEach(btn => {
     btn.addEventListener('click', e => {
       e.target.parentElement.style.setProperty('display', 'none');
+      //remove this course from wishlist of this user
       let currentUser = JSON.parse(localStorage.getItem('currentUser'));
       let users = JSON.parse(localStorage.getItem('users'));
 
       let newList = currentUser.wishlist.filter(ele => ele != btn.dataset.id);
       currentUser.wishlist = newList;
       localStorage.setItem('currentUser', JSON.stringify(currentUser));
+      const userInList = users.find((u) => u.email == currentUser.email);
+
+    if (userInList) {
+      userInList.wishlist=newList;
+      localStorage.setItem("users", JSON.stringify(users)); 
+    }
     })
   })
 }

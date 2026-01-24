@@ -1,5 +1,25 @@
-import { courses } from "./data.js";
+//import { courses } from "./data.js";
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//to make admin control courses we will copy data from ./data.js to localstorage and make admin conrol it
+import { courses as manualCourses } from "./data.js";
+
+
+function copyDataInLocal() {
+   //if courses is empty
+    const storedCourses = localStorage.getItem("courses");
+
+    if (!storedCourses) {
+        // If not, take the manual courses from data.js and save them to localStorage
+        localStorage.setItem("courses", JSON.stringify(manualCourses));
+    }
+}
+
+copyDataInLocal();
+
+const courses = JSON.parse(localStorage.getItem("courses")) || []; // get courses from localstorage
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 let loginBtn = document.querySelector('.btn-login');
 let registerBtn = document.querySelector('.btn-register');

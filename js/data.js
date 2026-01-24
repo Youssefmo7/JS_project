@@ -54,7 +54,7 @@ function generateCourses() {
       category: "Web",
       instructor: {
         name: "Omar Khaled",
-        image: "instructors/omar.jpg"
+        image: "instructors/ahmed.jpg"
       },
       price: 150,
       duration: "25 hours",
@@ -76,7 +76,7 @@ function generateCourses() {
       category: "Systems",
       instructor: {
         name: "Mohamed Ali",
-        image: "instructors/mohamed.jpg"
+        image: "instructors/ahmed.jpg"
       },
       price: 200,
       duration: "28 hours",
@@ -98,7 +98,7 @@ function generateCourses() {
       category: "Databases",
       instructor: {
         name: "Nour Adel",
-        image: "instructors/nour.jpg"
+        image: "instructors/sara.jpg"
       },
       price: 140,
       duration: "22 hours",
@@ -120,7 +120,7 @@ function generateCourses() {
       category: "Networks",
       instructor: {
         name: "Khaled Samir",
-        image: "instructors/khaled.jpg"
+        image: "instructors/ahmed.jpg"
       },
       price: 160,
       duration: "24 hours",
@@ -142,7 +142,7 @@ function generateCourses() {
       category: "Engineering",
       instructor: {
         name: "Heba Youssef",
-        image: "instructors/heba.jpg"
+        image: "instructors/sara.jpg"
       },
       price: 170,
       duration: "26 hours",
@@ -164,7 +164,7 @@ function generateCourses() {
       category: "Security",
       instructor: {
         name: "Youssef Magdy",
-        image: "instructors/youssef.jpg"
+        image: "instructors/ahmed.jpg"
       },
       price: 190,
       duration: "27 hours",
@@ -186,7 +186,7 @@ function generateCourses() {
       category: "AI",
       instructor: {
         name: "Salma Fathy",
-        image: "instructors/salma.jpg"
+        image: "instructors/sara.jpg"
       },
       price: 220,
       duration: "35 hours",
@@ -208,7 +208,7 @@ function generateCourses() {
       category: "AI",
       instructor: {
         name: "Mostafa Adel",
-        image: "instructors/mostafa.jpg"
+        image: "instructors/ahmed.jpg"
       },
       price: 230,
       duration: "32 hours",

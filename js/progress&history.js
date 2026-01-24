@@ -1,4 +1,6 @@
-import { courses } from "./data.js";
+//import { courses } from "./data.js";
+
+const courses = JSON.parse(localStorage.getItem("courses")) || []; // get courses from localstorage
 
 // Data structure for courses
 let ongoingCourses = JSON.parse(localStorage.getItem('currentUser')).courses
@@ -49,7 +51,7 @@ function renderOngoingCourses() {
                 </div>
                 <div class="ph-due-date">Progress: ${course.progress}%</div>
             </div>
-            <button class="ph-resume-button" onclick="resumeCourse('${course.title}')">Resume</button>
+            <button class="ph-resume-button" onclick="window.location.href='resume_course.html?id=${course.id}'">Resume</button>
         </div>
     `).join('');
 }

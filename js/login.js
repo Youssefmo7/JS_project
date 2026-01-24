@@ -1,4 +1,4 @@
-const loginForm = document.querySelector("form");
+let loginForm = document.querySelector("form");
 
 
 if (loginForm) {
@@ -57,3 +57,26 @@ function showError(message) {
   loginForm.appendChild(errorDiv);
 }
 
+
+// function initializeAdmin() {
+//     let users = JSON.parse(localStorage.getItem("users")) || [];
+
+//     const adminExists = users.some(u => u.role === "admin");
+
+//     if (!adminExists) {
+//         const adminUser = {
+//             id: 100, 
+//             firstName: "System",
+//             lastName: "Admin",
+//             email: "admin@learnhub.com",
+//             password: "Admin123!", // Make sure this passes your Regex!
+//             role: "admin",
+//             courses: []
+//         };
+//         users.push(adminUser);
+//         localStorage.setItem("users", JSON.stringify(users));
+//         console.log("Default admin created: admin@learnhub.com");
+//     }
+// }
+
+// initializeAdmin(); // Run this when the script loads

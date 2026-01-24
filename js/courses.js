@@ -1,4 +1,7 @@
-import { courses } from "./data.js";
+//import { courses } from "./data.js";
+
+
+const courses = JSON.parse(localStorage.getItem("courses")) || []; // get courses from localstorage
 
 let wishlist = JSON.parse(localStorage.getItem('currentUser')).wishlist;
 let loggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));

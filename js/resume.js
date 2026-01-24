@@ -1,4 +1,6 @@
-import { courseVids, courses } from "./data.js";
+import { courseVids } from "./data.js";
+
+const courses = JSON.parse(localStorage.getItem("courses")) || []; // get courses from localstorage
 
 let courseId = new URLSearchParams(window.location.search).get('id');
 let currentVid = 0;

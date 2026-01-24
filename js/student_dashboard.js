@@ -1,4 +1,5 @@
-import { courses } from "./data.js";
+//import { courses } from "./data.js";
+const courses = JSON.parse(localStorage.getItem("courses")) || []; // get courses from localstorage
 import {
   renderCertificates,
   renderOngoingCourses,

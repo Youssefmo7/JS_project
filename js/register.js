@@ -1,16 +1,16 @@
-// Get form elements
-const form = document.querySelector("form");
-const firstNameInput = document.getElementById("name");
-const lastNameInput = document.querySelector('input[placeholder="Last"]');
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const repeatPasswordInput = document.getElementById("re-password");
-const femaleRadio = document.getElementById("female");
-const maleRadio = document.getElementById("male");
+// get form elements
+let form = document.querySelector("form");
+let firstNameInput = document.getElementById("name");
+let lastNameInput = document.querySelector('input[placeholder="Last"]');
+let emailInput = document.getElementById("email");
+let passwordInput = document.getElementById("password");
+let repeatPasswordInput = document.getElementById("re-password");
+let femaleRadio = document.getElementById("female");
+let maleRadio = document.getElementById("male");
 
 // email validation
 function isValidEmail(email) {
-  const emailRegex = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+  let emailRegex = new RegExp(/^[^\s@]{3,}@[^\s@]{3,}\.[^\s@]{2,}$/);
   return emailRegex.test(email);
 }
 
@@ -22,19 +22,19 @@ function emailExists(email) {
 }
 // password lenght
 function isStrongPassword(password) {
-  return password.length >= 8;
+let passRegex = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/);
+  return password.length >= 8 && passRegex.test(password);
 }
 
 // show error message
 function showError(input, message) {
-  // remove existing error if any
-  const existingError = input.parentElement.querySelector(".error-message");
+  let existingError = input.parentElement.querySelector(".error-message");
   if (existingError) {
     existingError.remove();
   }
 
   // create and add new error message
-  const errorDiv = document.createElement("div");
+  let errorDiv = document.createElement("div");
   errorDiv.className = "error-message";
   errorDiv.style.color = "red";
   errorDiv.style.fontSize = "12px";
@@ -86,7 +86,7 @@ passwordInput.addEventListener("blur", function () {
   if (this.value === "") {
     showError(this, "Password is required");
   } else if (!isStrongPassword(this.value)) {
-    showError(this, "Password must be at least 8 characters long");
+    showError(this, "Password must be at least 8 and contains upper and lower letter,digit and special characters");
   } else {
     clearError(this);
   }
@@ -150,7 +150,7 @@ form.addEventListener("submit", function (e) {
     showError(passwordInput, "Password is required");
     isValid = false;
   } else if (!isStrongPassword(passwordInput.value)) {
-    showError(passwordInput, "Password must be at least 8 characters long");
+    showError(passwordInput, "Password must be at least 8 and contains upper and lower letter,digit and special characters");
     isValid = false;
   }
 
@@ -177,7 +177,7 @@ form.addEventListener("submit", function (e) {
       certificates: []
     };
 
-    // console.log('Form submitted successfully:', formData);
+    
     const existingUsers = JSON.parse(localStorage.getItem("users")) || []; // convert it from json to object js
     existingUsers.push(userData); // add new user to array
 
