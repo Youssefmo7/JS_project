@@ -61,12 +61,10 @@ class AdminDashboard {
         document.getElementById('AD_submitEdit').addEventListener('click', () => this.handleEditCourse());
         document.getElementById('AD_confirmDelete').addEventListener('click', () => this.handleDeleteCourse());
 
-        
         const coursesNavItem = document.getElementById('AD-courses');
         if (coursesNavItem) {
             coursesNavItem.addEventListener('click', () => {
                 this.scrollToCourseTable();
-                // Add active class
                 document.querySelectorAll('.AD_nav-item').forEach(item => {
                     item.classList.remove('AD_active');
                 });
@@ -81,7 +79,6 @@ class AdminDashboard {
         });
     }
 
-    // New method: Scroll to course table
     scrollToCourseTable() {
         const courseList = document.querySelector('.AD_course-list');
         if (courseList) {
@@ -308,7 +305,6 @@ class AdminDashboard {
 
         container.innerHTML = tableHTML;
 
-        // Add row click handlers for selection
         document.querySelectorAll('.AD_course-table tbody tr').forEach(row => {
             row.addEventListener('click', (e) => {
                 if (!e.target.closest('button')) {
@@ -318,22 +314,18 @@ class AdminDashboard {
             });
         });
 
-        // Add event listeners for EDIT buttons
         document.querySelectorAll('.AD_icon-btn.edit').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const courseId = parseInt(btn.getAttribute('data-course-id'));
-                console.log('Edit clicked for course ID:', courseId); // Debug
                 this.editCourse(courseId);
             });
         });
 
-        // Add event listeners for DELETE buttons
         document.querySelectorAll('.AD_icon-btn.delete').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const courseId = parseInt(btn.getAttribute('data-course-id'));
-                console.log('Delete clicked for course ID:', courseId); // Debug
                 this.deleteCourse(courseId);
             });
         });
@@ -345,13 +337,11 @@ class AdminDashboard {
     }
 
     editCourse(id) {
-        console.log('editCourse called with ID:', id); // Debug
         this.selectedCourseId = id;
         this.openEditModal();
     }
 
     deleteCourse(id) {
-        console.log('deleteCourse called with ID:', id); // Debug
         this.selectedCourseId = id;
         this.openDeleteModal();
     }
@@ -392,14 +382,24 @@ class AdminDashboard {
         }, 2000);
     }
 
+    // Updated storage methods to use localStorage
     saveToStorage(key, data) {
-        if (!window.appStorage) window.appStorage = {};
-        window.appStorage[key] = data;
+        try {
+            localStorage.setItem(key, JSON.stringify(data));
+        } catch (error) {
+            console.error('Error saving to localStorage:', error);
+            this.showMessage('Error saving data. Storage might be full.', 'error');
+        }
     }
 
     getFromStorage(key) {
-        if (!window.appStorage) window.appStorage = {};
-        return window.appStorage[key] || null;
+        try {
+            const item = localStorage.getItem(key);
+            return item ? JSON.parse(item) : null;
+        } catch (error) {
+            console.error('Error reading from localStorage:', error);
+            return null;
+        }
     }
 }
 
@@ -407,6 +407,3 @@ let dashboard;
 document.addEventListener('DOMContentLoaded', () => {
     dashboard = new AdminDashboard();
 });
-       
-        
-    
