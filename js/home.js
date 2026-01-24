@@ -4,6 +4,8 @@ import { courses } from "./data.js";
 let loginBtn = document.querySelector('.btn-login');
 let registerBtn = document.querySelector('.btn-register');
 let allCourseBtn = document.querySelector('.btn-courses');
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
 
 document.getElementById('logout-btn').addEventListener('click', (e) => {
   localStorage.setItem('currentUser', JSON.stringify({}));
@@ -32,13 +34,23 @@ if (allCourseBtn) {
   });
 }
 
-if(JSON.parse(localStorage.getItem('isLoggedIn'))) {
+
+let profileName = document.querySelector("#profile-btn p");
+let profileImg = document.querySelector("#profile-btn img");
+
+if(JSON.parse(localStorage.getItem('isLoggedIn')) &&currentUser) {
   document.querySelector('.header-buttons').style.display = 'none'
   document.querySelector('.header-buttons-login').style.display = 'flex'
+
+  profileName.textContent = `${currentUser.firstName} ${currentUser.lastName || ""}`;
+  
+  if (currentUser.avatar) {
+    profileImg.src = `./images/${currentUser.avatar}`;
 }
 document.getElementById('profile-btn').addEventListener('click', e => {
   document.querySelector('.header-buttons-login .nav-popup').classList.toggle('show');
 })  
+}
 
 
 document.querySelector('.cards').innerHTML = courses

@@ -1,6 +1,10 @@
 import { courses } from "./data.js";
 import { stripeLinks } from "./payment.js";
 
+if (!JSON.parse(localStorage.getItem("currentUser"))) {
+  window.location.href = "login.html";
+}
+
 let id = new URLSearchParams(window.location.search).get("id");
 // console.log('Course ID:', id);
 // console.log(window.location.search);
