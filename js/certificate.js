@@ -1,8 +1,8 @@
  // Certificate data object
         const certificateData = {
-            studentName: "Alex Johnson",
+            studentName: "Abdulrahman Ali",
             courseName: "Introduction to Data Science",
-            completionDate: "October 26, 2023"
+            completionDate: "October 26, 2025"
         };
 
         // Function to update certificate information

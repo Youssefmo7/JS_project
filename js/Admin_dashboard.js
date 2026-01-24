@@ -259,7 +259,7 @@ class AdminDashboard {
         setTimeout(() => {
             this.successMessage.style.display = 'none';
             this.overlay.style.display = 'none';
-        }, 1500);
+        }, 1000);
     }
 }
 
