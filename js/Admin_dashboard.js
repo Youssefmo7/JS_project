@@ -62,28 +62,10 @@ class AdminDashboard {
         document.getElementById('AD_confirmDelete').addEventListener('click', () => this.handleDeleteCourse());
 
         const coursesNavItem = document.getElementById('AD-courses');
-        if (coursesNavItem) {
             coursesNavItem.addEventListener('click', () => {
-                this.scrollToCourseTable();
-                document.querySelectorAll('.AD_nav-item').forEach(item => {
-                    item.classList.remove('AD_active');
-                });
-                coursesNavItem.classList.add('AD_active');
-            });
-        }
-
-        window.addEventListener('click', (e) => {
-            if (e.target === this.modals.add) this.closeModal('add');
-            if (e.target === this.modals.edit) this.closeModal('edit');
-            if (e.target === this.modals.delete) this.closeModal('delete');
-        });
-    }
-
-    scrollToCourseTable() {
-        const courseList = document.querySelector('.AD_course-list');
-        if (courseList) {
-            courseList.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+                 const courseList = document.querySelector('.AD_course-list');
+                 courseList.scrollIntoView({ behavior: 'smooth'});
+            });    
     }
 
     loadData() {
