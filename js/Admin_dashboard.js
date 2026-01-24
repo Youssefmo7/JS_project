@@ -57,6 +57,12 @@ class AdminDashboard {
         document.getElementById('AD_closeDelete').addEventListener('click', () => this.closeModal('delete'));
         document.getElementById('AD_cancelDelete').addEventListener('click', () => this.closeModal('delete'));
         document.getElementById('AD_confirmDelete').addEventListener('click', () => this.handleDeleteCourse());
+
+        const coursesNavItem = document.getElementById('AD-courses');
+            coursesNavItem.addEventListener('click', () => {
+                 const courseList = document.querySelector('.AD_course-list');
+                 courseList.scrollIntoView({ behavior: 'smooth'});
+            });    
     }
 
     loadData() {
