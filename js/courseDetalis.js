@@ -86,9 +86,9 @@ document.getElementById("cd-enrollBtn").addEventListener("click", () => {
 });
 
 //if resume
-// document.getElementById('cd-resumeBtn').addEventListener('click', () => {
-//     window.location.href ="home.html" ;
-// });
+document.getElementById('cd-resumeBtn').addEventListener('click', () => {
+    window.location.href =`resume_course.html?id=${id}`;
+});
 
 //console.log(" users :", JSON.parse(localStorage.getItem("users")));
 function unlockCourse(id) {

@@ -1,3 +1,5 @@
+import { courses } from "./data.js";
+
 
 let loginBtn = document.querySelector('.btn-login');
 let registerBtn = document.querySelector('.btn-register');
@@ -37,3 +39,27 @@ if(JSON.parse(localStorage.getItem('isLoggedIn'))) {
 document.getElementById('profile-btn').addEventListener('click', e => {
   document.querySelector('.header-buttons-login .nav-popup').classList.toggle('show');
 })  
+
+
+document.querySelector('.cards').innerHTML = courses
+  .slice(0, 4) 
+  .map(course => `
+    <div class="course-card">
+      <img src="./images/${course.image}" alt="${course.courseName}" class="h-courseImg">
+      <div class="course-info">
+        <span class="rating">★ 4.8</span>
+        <h3 class="course-name">${course.courseName}</h3>
+        <p class="course-ins">${course.instructor.name}</p>
+        <div class="course-details">
+          <span>👥 15.2K</span>
+          <span class="course-duration">${course.duration}</span>
+        </div>
+        <div class="course-footer">
+          <span class="price">${course.price}$</span>
+          <button class="btn-view" onclick="window.location.href='courseDetails.html?id=${course.id}'">View</button>
+        </div>
+      </div>
+    </div>
+  `).join("");
+
+  // view bitton
