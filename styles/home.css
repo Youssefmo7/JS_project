@@ -458,20 +458,3 @@ body {
   font-size: 14px;
   opacity: 0.8;
 }
-
-/* Responsive Footer */
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .newsletter {
-    flex-direction: column;
-  }
-
-  .newsletter input,
-  .newsletter button {
-    width: 100%;
-  }
-}

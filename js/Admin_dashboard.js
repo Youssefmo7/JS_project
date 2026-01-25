@@ -5,6 +5,9 @@ if(currentUser.role != 'admin') {
     window.location.href = 'login.html'
 }
 
+let users = JSON.parse(localStorage.getItem('users'));
+document.getElementById('total-students').textContent = users.length;
+
 class AdminDashboard {
     constructor() {
         this.courses = initialCourses;
