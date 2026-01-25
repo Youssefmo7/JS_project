@@ -1,8 +1,13 @@
 import { courses as initialCourses } from "./data.js";
 
+let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+if(currentUser.role != 'admin') {
+    window.location.href = 'login.html'
+}
+
 class AdminDashboard {
     constructor() {
-        this.courses = [];
+        this.courses = initialCourses;
         this.categories = new Set();
         this.selectedCourseId = null;
         this.initializeElements();
@@ -88,7 +93,7 @@ class AdminDashboard {
         }
 
         const newCourse = {
-            id: Date.now(),
+            id: parseInt(Math.random() * 10) + 11,
             courseName: this.addForm.name.value.trim(),
             description: this.addForm.description.value.trim(),
             category: this.addForm.category.value.trim(),
@@ -103,7 +108,8 @@ class AdminDashboard {
         };
 
         this.courses.push(newCourse);
-        this.saveToStorage('courses', this.courses);
+        console.log(this.courses);
+        localStorage.setItem('courses', JSON.stringify(this.courses));
         this.closeModal('add');
         this.refreshUI();
         this.showMessage('Course Created!');

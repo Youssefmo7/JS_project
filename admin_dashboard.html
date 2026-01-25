@@ -5,9 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="./styles/Admin_dashboard.css">
+    <link rel="stylesheet" href="./styles/common.css">
 </head>
 <body>
-    <div class="AD_sidebar">
+
+    <header>
+        <div class="header-content">
+          <nav>
+            <a href="home.html">Home</a>
+            <a href="home.html#courses">Courses</a>
+            <a href="home.html#categories">Categories</a>
+            <a href="home.html#contact">Contact Us</a>
+          </nav>
+          <div class="header-buttons">
+            <button class="btn-login">Sign In</button>
+            <button class="btn-register">Sign Up</button>
+          </div>
+          <div class="header-buttons-login">
+            <button id="profile-btn">
+              <div class="image-box"><img src="./images/instructors/ahmed.jpg" alt=""></div>
+              <p>Ahmed Alaa</p>
+            </button>
+            <button id="logout-btn">logout</button>
+            <div class="nav-popup">
+              <div class="popup-link"><a href="student_dashboard.html">Dashboard</a></div>
+              <div class="popup-link"><a href="profile.html">Profile</a></div>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <div class="body-container">
+        <div class="AD_sidebar">
         <div class="AD_nav-item " id="AD-courses">
             <svg fill="currentColor" viewBox="0 0 24 24">
                 <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
@@ -190,6 +219,7 @@
         <div class="AD_success-text" id="AD_successText">Course added successfully!</div>
     </div>
 
+    </div>
     <script type="module" src="./js/Admin_dashboard.js"> </script>
 </body>
 </html>

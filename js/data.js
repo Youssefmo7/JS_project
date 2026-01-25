@@ -226,7 +226,7 @@ function generateCourses() {
 }
 
 let tmpCourses = generateCourses();
-localStorage.setItem('courses', JSON.stringify(tmpCourses))
+// localStorage.setItem('courses', JSON.stringify(tmpCourses))
 /////  courses  /////
 
 

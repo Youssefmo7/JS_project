@@ -1,23 +1,23 @@
-//import { courses } from "./data.js";
+import { courses } from "./data.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //to make admin control courses we will copy data from ./data.js to localstorage and make admin conrol it
-import { courses as manualCourses } from "./data.js";
+// import { courses as manualCourses } from "./data.js";
 
 
-function copyDataInLocal() {
-   //if courses is empty
-    const storedCourses = localStorage.getItem("courses");
+// function copyDataInLocal() {
+//    //if courses is empty
+//     const storedCourses = localStorage.getItem("courses");
 
-    if (!storedCourses) {
-        // If not, take the manual courses from data.js and save them to localStorage
-        localStorage.setItem("courses", JSON.stringify(manualCourses));
-    }
-}
+//     if (!storedCourses) {
+//         // If not, take the manual courses from data.js and save them to localStorage
+//         localStorage.setItem("courses", JSON.stringify(manualCourses));
+//     }
+// }
 
-copyDataInLocal();
+// copyDataInLocal();
 
-const courses = JSON.parse(localStorage.getItem("courses")) || []; // get courses from localstorage
+// const courses = JSON.parse(localStorage.getItem("courses")) || []; // get courses from localstorage
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -74,7 +74,7 @@ document.getElementById('profile-btn').addEventListener('click', e => {
 
 
 document.querySelector('.cards').innerHTML = courses
-  .slice(0, 4) 
+  .slice(0, 4)
   .map(course => `
     <div class="course-card">
       <img src="./images/${course.image}" alt="${course.courseName}" class="h-courseImg">
