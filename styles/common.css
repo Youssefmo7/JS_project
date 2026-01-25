@@ -79,7 +79,7 @@ nav a:hover {
   content: "";
   position: absolute;
   top: -16px;
-  left: 60px;
+  left: calc(50% - 10px);
   border-width: 0 10px 10px 10px;
   border-style: solid;
   border-color: transparent transparent white transparent;
@@ -94,7 +94,7 @@ nav a:hover {
   border-radius: 12px;
   color: #4a86e8;
   width:100%;
-  padding: 18px 24px;
+  padding: 18px 50px;
   font-weight: bold;
   overflow: hidden;
   font-size: 16px;

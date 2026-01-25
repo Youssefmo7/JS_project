@@ -95,3 +95,13 @@ document.querySelector('.cards').innerHTML = courses
   `).join("");
 
   // view bitton
+
+  let bullets = document.querySelectorAll("header nav a");
+  bullets.forEach((bullet) => {
+  bullet.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(e.target.dataset.section);
+    document.querySelector(`#${e.target.dataset.section}`)
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
